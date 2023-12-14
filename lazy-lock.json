@@ -1,4 +1,7 @@
 {
+  "barbecue": { "branch": "main", "commit": "cd7e7da622d68136e13721865b4d919efd6325ed" },
   "catppuccin": { "branch": "main", "commit": "64dc309bc157779691be38bbfc5123584e0a4a85" },
-  "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" }
+  "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
+  "nvim-navic": { "branch": "master", "commit": "8649f694d3e76ee10c19255dece6411c29206a54" },
+  "nvim-web-devicons": { "branch": "master", "commit": "a1425903ab52a0a0460622519e827f224e5b4fee" }
 }

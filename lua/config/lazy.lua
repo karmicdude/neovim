@@ -46,6 +46,7 @@ local opts = {
 
 local plugins = {
 	{ import = "plugins.colorschemas", enabled = true },
+	{ import = "plugins", enabled = true },
 }
 
 require("lazy").setup(plugins, opts)
