@@ -21,6 +21,7 @@
 - [tabby.nvim] - A declarative, highly configurable, and neovim style tabline plugin
 - [gitsigns.nvim] - Git integration for buffers
 - [gitlinker.nvim] - Generates shareable file permalinks to Git web services
+- [todo-comments.nvim] - Highlight, list and search todo comments in your projects
 
 ## Colorscheme
 
@@ -42,6 +43,7 @@
 [tabby.nvim]: https://github.com/nanozuki/tabby.nvim
 [gitsigns.nvim]: https://github.com/lewis6991/gitsigns.nvim
 [gitlinker.nvim]: https://github.com/ruifm/gitlinker.nvim
+[todo-comments.nvim]: https://github.com/folke/todo-comments.nvim
 
 [catppuccin]: https://github.com/catppuccin/nvim
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim
