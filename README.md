@@ -22,6 +22,7 @@
 - [gitsigns.nvim] - Git integration for buffers
 - [gitlinker.nvim] - Generates shareable file permalinks to Git web services
 - [todo-comments.nvim] - Highlight, list and search todo comments in your projects
+- [lualine.nvim] - A blazing fast and easy to configure Neovim statusline written in Lua
 
 ## Colorscheme
 
@@ -44,6 +45,7 @@
 [gitsigns.nvim]: https://github.com/lewis6991/gitsigns.nvim
 [gitlinker.nvim]: https://github.com/ruifm/gitlinker.nvim
 [todo-comments.nvim]: https://github.com/folke/todo-comments.nvim
+[lualine.nvim]: https://github.com/nvim-lualine/lualine.nvim
 
 [catppuccin]: https://github.com/catppuccin/nvim
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim
