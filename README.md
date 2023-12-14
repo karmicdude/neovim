@@ -21,6 +21,7 @@
 - [tabby.nvim] - A declarative, highly configurable, and neovim style tabline plugin
 - [gitsigns.nvim] - Git integration for buffers
 - [gitlinker.nvim] - Generates shareable file permalinks to Git web services
+- [neogit] - An interactive and powerful Git interface for Neovim
 - [todo-comments.nvim] - Highlight, list and search todo comments in your projects
 - [lualine.nvim] - A blazing fast and easy to configure Neovim statusline written in Lua
 - [nvim-surround] - Add/change/delete surrounding delimiter pairs with ease
@@ -46,6 +47,7 @@
 [tabby.nvim]: https://github.com/nanozuki/tabby.nvim
 [gitsigns.nvim]: https://github.com/lewis6991/gitsigns.nvim
 [gitlinker.nvim]: https://github.com/ruifm/gitlinker.nvim
+[neogit]: https://github.com/neogitorg/neogit
 [todo-comments.nvim]: https://github.com/folke/todo-comments.nvim
 [lualine.nvim]: https://github.com/nvim-lualine/lualine.nvim
 [nvim-surround]: https://github.com/kylechui/nvim-surround
