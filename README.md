@@ -14,11 +14,11 @@
 - [plenary.nvim] - A library of helper lua functions
 - [image.nvim] - A library that adds image support for Neovim
 - [nui.nvim] - UI Component Library for Neovim
+- [project.nvim] - The superior project management solution for Neovim
 
 ## Colorscheme
 
 - [catppuccin] - Soothing pastel theme for Neovim
-
 
 [lazy.nvim]: https://github.com/folke/lazy.nvim
 [barbecue.nvim]: https://github.com/utilyre/barbecue.nvim
@@ -29,7 +29,7 @@
 [telescope.nvim]: https://github.com/nvim-telescope/telescope.nvim
 [telescope-fzf-native.nvim]: https://github.com/nvim-telescope/telescope-fzf-native.nvim
 [telescope-symbols.nvim]: https://github.com/nvim-telescope/telescope-symbols.nvim
-
+[project.nvim]: https://github.com/ahmedkhalf/project.nvim
 
 [catppuccin]: https://github.com/catppuccin/nvim
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim
