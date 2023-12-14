@@ -17,7 +17,7 @@ local opts = {
 	},
 	checker = { enable = true, },
 	install = {
-		colorscheme = { "habamax", },
+		colorscheme = { "catppuccin", "habamax", },
 		missing = true,
 	},
 	change_detection = {
