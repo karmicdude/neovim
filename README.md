@@ -16,6 +16,8 @@
 - [nui.nvim] - UI Component Library for Neovim
 - [project.nvim] - The superior project management solution for Neovim
 - [nvim-treesitter] - Neovim Treesitter configurations and abstraction layer
+- [indent-blankline.nvim] - Indent guides for Neovim
+- [mini.indentscope] - For current indent scope highlight
 
 ## Colorscheme
 
@@ -32,6 +34,8 @@
 [telescope-symbols.nvim]: https://github.com/nvim-telescope/telescope-symbols.nvim
 [project.nvim]: https://github.com/ahmedkhalf/project.nvim
 [nvim-treesitter]: https://github.com/nvim-treesitter/nvim-treesitter
+[indent-blankline.nvim]: https://github.com/lukas-reineke/indent-blankline.nvim
+[mini.indentscope]: https://github.com/echasnovski/mini.indentscope
 
 [catppuccin]: https://github.com/catppuccin/nvim
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim
