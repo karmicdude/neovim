@@ -18,6 +18,7 @@
 - [nvim-treesitter] - Neovim Treesitter configurations and abstraction layer
 - [indent-blankline.nvim] - Indent guides for Neovim
 - [mini.indentscope] - For current indent scope highlight
+- [tabby.nvim] - A declarative, highly configurable, and neovim style tabline plugin
 
 ## Colorscheme
 
@@ -36,6 +37,7 @@
 [nvim-treesitter]: https://github.com/nvim-treesitter/nvim-treesitter
 [indent-blankline.nvim]: https://github.com/lukas-reineke/indent-blankline.nvim
 [mini.indentscope]: https://github.com/echasnovski/mini.indentscope
+[tabby.nvim]: https://github.com/nanozuki/tabby.nvim
 
 [catppuccin]: https://github.com/catppuccin/nvim
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim
