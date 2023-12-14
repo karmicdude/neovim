@@ -22,6 +22,7 @@
 - [gitsigns.nvim] - Git integration for buffers
 - [gitlinker.nvim] - Generates shareable file permalinks to Git web services
 - [neogit] - An interactive and powerful Git interface for Neovim
+- [diffview.nvim] - A Git diff manager
 - [todo-comments.nvim] - Highlight, list and search todo comments in your projects
 - [lualine.nvim] - A blazing fast and easy to configure Neovim statusline written in Lua
 - [nvim-surround] - Add/change/delete surrounding delimiter pairs with ease
@@ -52,6 +53,7 @@
 [lualine.nvim]: https://github.com/nvim-lualine/lualine.nvim
 [nvim-surround]: https://github.com/kylechui/nvim-surround
 [virt-column.nvim]: https://github.com/lukas-reineke/virt-column.nvim
+[diffview.nvim]: https://github.com/sindrets/diffview.nvim
 
 [catppuccin]: https://github.com/catppuccin/nvim
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim
