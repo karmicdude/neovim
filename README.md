@@ -24,6 +24,7 @@
 - [todo-comments.nvim] - Highlight, list and search todo comments in your projects
 - [lualine.nvim] - A blazing fast and easy to configure Neovim statusline written in Lua
 - [nvim-surround] - Add/change/delete surrounding delimiter pairs with ease
+- [virt-column.nvim] - Display a character as the colorcolumn
 
 ## Colorscheme
 
@@ -48,6 +49,7 @@
 [todo-comments.nvim]: https://github.com/folke/todo-comments.nvim
 [lualine.nvim]: https://github.com/nvim-lualine/lualine.nvim
 [nvim-surround]: https://github.com/kylechui/nvim-surround
+[virt-column.nvim]: https://github.com/lukas-reineke/virt-column.nvim
 
 [catppuccin]: https://github.com/catppuccin/nvim
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim
