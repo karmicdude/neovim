@@ -15,6 +15,7 @@
 - [image.nvim] - A library that adds image support for Neovim
 - [nui.nvim] - UI Component Library for Neovim
 - [project.nvim] - The superior project management solution for Neovim
+- [nvim-treesitter] - Neovim Treesitter configurations and abstraction layer
 
 ## Colorscheme
 
@@ -30,6 +31,7 @@
 [telescope-fzf-native.nvim]: https://github.com/nvim-telescope/telescope-fzf-native.nvim
 [telescope-symbols.nvim]: https://github.com/nvim-telescope/telescope-symbols.nvim
 [project.nvim]: https://github.com/ahmedkhalf/project.nvim
+[nvim-treesitter]: https://github.com/nvim-treesitter/nvim-treesitter
 
 [catppuccin]: https://github.com/catppuccin/nvim
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim
