@@ -10,51 +10,62 @@ return {
 	end,
 	opts = {
 		flavour = "mocha",
+		show_end_of_buffer = true,
 		integrations = {
 			cmp = true,
 			treesitter = true,
-			flash = true,
+			treesitter_context = true,
 			gitsigns = true,
+			alpha = true,
+			barbecue = {
+			    dim_dirname = true,
+			    bold_basename = true,
+			    dim_context = false,
+			    alt_background = false,
+			},
 			indent_blankline = {
 				enabled = true,
 				scope_color = "text",
 				colored_indent_levels = false,
-				lightspeed = true,
-				markdown = true,
-				mason = true,
-				mini = {
-					enabled = false,
-					indentscope_color = "lavender",
-				},
-				noice = true,
-				neotree = true,
-				native_lsp = {
-					enabled = true,
-					virtual_text = {
-						errors = { "italic" },
-						hints = { "italic" },
-						warnings = { "italic" },
-						information = { "italic" },
-					},
-					underlines = {
-						errors = { "underline" },
-						hints = { "underline" },
-						warnings = { "underline" },
-						information = { "underline" },
-					},
-					inlay_hints = {
-						background = true,
-					},
-				},
-				window_picker = true,
-				telescope = {
-					enabled = true,
-					style = "nvchad",
-				},
-				vimwiki = true,
-				which_key = true,
 			},
+			lightspeed = true,
+			markdown = true,
+			mason = true,
+			mini = {
+				enabled = false,
+				indentscope_color = "lavender",
+			},
+			neogit = true,
+			noice = true,
+			neotree = true,
+			navic = {
+			    enabled = true,
+			    custom_bg = "NONE",
+			},
+			native_lsp = {
+				enabled = true,
+				virtual_text = {
+					errors = { "italic" },
+					hints = { "italic" },
+					warnings = { "italic" },
+					information = { "italic" },
+				},
+				underlines = {
+					errors = { "underline" },
+					hints = { "underline" },
+					warnings = { "underline" },
+					information = { "underline" },
+				},
+				inlay_hints = {
+					background = true,
+				},
+			},
+			window_picker = true,
+			telescope = {
+				enabled = true,
+				style = "nvchad",
+			},
+			which_key = true,
 		},
 	},
 }
-
