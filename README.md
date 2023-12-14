@@ -20,6 +20,7 @@
 - [mini.indentscope] - For current indent scope highlight
 - [tabby.nvim] - A declarative, highly configurable, and neovim style tabline plugin
 - [gitsigns.nvim] - Git integration for buffers
+- [gitlinker.nvim] - Generates shareable file permalinks to Git web services
 
 ## Colorscheme
 
@@ -40,6 +41,7 @@
 [mini.indentscope]: https://github.com/echasnovski/mini.indentscope
 [tabby.nvim]: https://github.com/nanozuki/tabby.nvim
 [gitsigns.nvim]: https://github.com/lewis6991/gitsigns.nvim
+[gitlinker.nvim]: https://github.com/ruifm/gitlinker.nvim
 
 [catppuccin]: https://github.com/catppuccin/nvim
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim

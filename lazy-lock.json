@@ -1,6 +1,8 @@
 {
   "barbecue": { "branch": "main", "commit": "cd7e7da622d68136e13721865b4d919efd6325ed" },
   "catppuccin": { "branch": "main", "commit": "64dc309bc157779691be38bbfc5123584e0a4a85" },
+  "gitlinker.nvim": { "branch": "master", "commit": "dc0aa4e9584540adaaadcd6978b6f57a465cbd35" },
+  "gitsigns.nvim": { "branch": "main", "commit": "d195f0c35ced5174d3ecce1c4c8ebb3b5bc23fa9" },
   "image.nvim": { "branch": "master", "commit": "41f0f2643a09631bc0d8e2837b514667d423e440" },
   "indent-blankline.nvim": { "branch": "master", "commit": "7206c77cb931f79885fc47f88ae18f99148392eb" },
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
