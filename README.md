@@ -18,6 +18,7 @@
 - [nvim-treesitter] - Neovim Treesitter configurations and abstraction layer
 - [indent-blankline.nvim] - Indent guides for Neovim
 - [mini.indentscope] - For current indent scope highlight
+- [mini.splitjoin] - Split and join arguments
 - [tabby.nvim] - A declarative, highly configurable, and neovim style tabline plugin
 - [gitsigns.nvim] - Git integration for buffers
 - [gitlinker.nvim] - Generates shareable file permalinks to Git web services
@@ -54,6 +55,7 @@
 [nvim-treesitter]: https://github.com/nvim-treesitter/nvim-treesitter
 [indent-blankline.nvim]: https://github.com/lukas-reineke/indent-blankline.nvim
 [mini.indentscope]: https://github.com/echasnovski/mini.indentscope
+[mini.splitjoin]: https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-splitjoin.md
 [tabby.nvim]: https://github.com/nanozuki/tabby.nvim
 [gitsigns.nvim]: https://github.com/lewis6991/gitsigns.nvim
 [gitlinker.nvim]: https://github.com/ruifm/gitlinker.nvim
