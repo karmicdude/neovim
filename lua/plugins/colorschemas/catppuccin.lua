@@ -63,7 +63,7 @@ return {
 			window_picker = true,
 			telescope = {
 				enabled = true,
-				style = "nvchad",
+				-- style = "nvchad",
 			},
 			which_key = true,
 		},

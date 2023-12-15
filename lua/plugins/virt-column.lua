@@ -3,7 +3,7 @@ return {
 	event = "BufReadPost",
 	opts = {
 		char = "▎",
-		highlight = {"VirtColumnColor"},
+		highlight = { "VirtColumnColor" },
 		exclude = {
 			filetypes = {
 				"neo-tree",

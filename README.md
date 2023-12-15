@@ -27,6 +27,15 @@
 - [lualine.nvim] - A blazing fast and easy to configure Neovim statusline written in Lua
 - [nvim-surround] - Add/change/delete surrounding delimiter pairs with ease
 - [virt-column.nvim] - Display a character as the colorcolumn
+- [nvim-cmp] - A completion plugin for neovim coded in Lua
+- [cmp-buffer] - [nvim-cmp] source for buffer words
+- [cmp-dictionary] - A dictionary completion source for [nvim-cmp]
+- [cmp-nvim-lsp] - [nvim-cmp] source for neovim builtin LSP client
+- [cmp-path] - [nvim-cmp] source for path completion
+- [cmp-rg] - `ripgrep` source for [nvim-cmp]
+- [cmp-luasnip] - [luasnip] completion source for [nvim-cmp]
+- [luasnip] - Snippet engine for Neovim written in Lua
+- [lspkind.nvim] - VSCode-like pictograms for Neovim built-in LSP
 
 ## Colorscheme
 
@@ -54,6 +63,15 @@
 [nvim-surround]: https://github.com/kylechui/nvim-surround
 [virt-column.nvim]: https://github.com/lukas-reineke/virt-column.nvim
 [diffview.nvim]: https://github.com/sindrets/diffview.nvim
+[nvim-cmp]: https://github.com/hrsh7th/nvim-cmp
+[cmp-buffer]: https://arc.net/l/quote/qnikvplr
+[cmp-dictionary]: https://github.com/uga-rosa/cmp-dictionary
+[cmp-nvim-lsp]: https://github.com/hrsh7th/cmp-nvim-lsp
+[cmp-path]: https://github.com/hrsh7th/cmp-path
+[cmp-rg]: https://github.com/lukas-reineke/cmp-rg
+[cmp-luasnip]: https://github.com/saadparwaiz1/cmp_luasnip
+[luasnip]: https://github.com/L3MON4D3/LuaSnip
+[lspkind.nvim]: https://github.com/onsails/lspkind.nvim
 
 [catppuccin]: https://github.com/catppuccin/nvim
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim
