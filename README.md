@@ -37,6 +37,7 @@
 - [cmp-luasnip] - [luasnip] completion source for [nvim-cmp]
 - [luasnip] - Snippet engine for Neovim written in Lua
 - [lspkind.nvim] - VSCode-like pictograms for Neovim built-in LSP
+- [flash.nvim] - Navigate your code with search labels, enhanced character motions
 
 ## Colorscheme
 
@@ -74,6 +75,7 @@
 [cmp-luasnip]: https://github.com/saadparwaiz1/cmp_luasnip
 [luasnip]: https://github.com/L3MON4D3/LuaSnip
 [lspkind.nvim]: https://github.com/onsails/lspkind.nvim
+[flash.nvim]: https://github.com/folke/flash.nvim
 
 [catppuccin]: https://github.com/catppuccin/nvim
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim
