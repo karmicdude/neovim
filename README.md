@@ -44,6 +44,7 @@
 - [modes.nvim] - Prismatic line decorations for the adventurous Neovim user
 - [nvim-colorizer] - A high-performance color highlighter for Neovim
 - [nvim-autopairs] - A super powerful autopair plugin for Neovim
+- [stay-in-place.nvim] - Neovim plugin that prevent cursor from moving (shift and filter actions)
 
 ## Colorscheme
 
@@ -88,6 +89,7 @@
 [modes.nvim]: https://github.com/mvllow/modes.nvim
 [nvim-colorizer]: https://github.com/NvChad/nvim-colorizer.lua
 [nvim-autopairs]: https://github.com/windwp/nvim-autopairs
+[stay-in-place.nvim]: https://github.com/gbprod/stay-in-place.nvim
 
 [catppuccin]: https://github.com/catppuccin/nvim
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim
