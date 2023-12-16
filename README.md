@@ -19,6 +19,7 @@
 - [indent-blankline.nvim] - Indent guides for Neovim
 - [mini.indentscope] - For current indent scope highlight
 - [mini.splitjoin] - Split and join arguments
+- [mini.trailspace] - Highlight and remove trainling spaces
 - [tabby.nvim] - A declarative, highly configurable, and neovim style tabline plugin
 - [gitsigns.nvim] - Git integration for buffers
 - [gitlinker.nvim] - Generates shareable file permalinks to Git web services
@@ -47,6 +48,7 @@
 - [stay-in-place.nvim] - Neovim plugin that prevent cursor from moving (shift and filter actions)
 - [scrollEOF.nvim] - Scroll past the end of file just like scrolloff option
 - [comment.nvim] - Smart and powerful comment plugin for Neovim
+- [twilight.nvim] - Dims inactive portions of the code you're editing using TreeSitter
 
 ## Colorscheme
 
@@ -66,6 +68,7 @@
 [indent-blankline.nvim]: https://github.com/lukas-reineke/indent-blankline.nvim
 [mini.indentscope]: https://github.com/echasnovski/mini.indentscope
 [mini.splitjoin]: https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-splitjoin.md
+[mini.trailspace]: https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-trailspace.md
 [tabby.nvim]: https://github.com/nanozuki/tabby.nvim
 [gitsigns.nvim]: https://github.com/lewis6991/gitsigns.nvim
 [gitlinker.nvim]: https://github.com/ruifm/gitlinker.nvim
@@ -94,6 +97,7 @@
 [stay-in-place.nvim]: https://github.com/gbprod/stay-in-place.nvim
 [scrollEOF.nvim]: https://github.com/Aasim-A/scrollEOF.nvim
 [comment.nvim]: https://github.com/numToStr/Comment.nvim
+[twilight.nvim]: https://github.com/folke/twilight.nvim
 
 [catppuccin]: https://github.com/catppuccin/nvim
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim
