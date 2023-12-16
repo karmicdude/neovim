@@ -49,12 +49,13 @@ local options = {
 		.. "a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,"
 		.. "sm:block-blinkwait175-blinkoff150-blinkon175",
 	encoding = "UTF-8",
-	showmode = true,
+	showmode = false,
 	history = 2000,
 	autoread = true,
 	gdefault = true,
 	updatetime = 200,
 	exrc = true,
+	timeoutlen = 500,
 }
 
 for k, v in pairs(global) do

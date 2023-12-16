@@ -7,6 +7,11 @@ return {
 		vim.cmd.colorscheme("catppuccin")
 		vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { fg = "#505173" })
 		vim.api.nvim_set_hl(0, "VirtColumnColor", { fg = "#26253b" })
+		vim.api.nvim_set_hl(0, "UserOnYankHighlight", { fg = "#f9e2af", })
+    vim.api.nvim_set_hl(0, "ModesCopy", { bg = "#f9e2af" })
+    vim.api.nvim_set_hl(0, "ModesDelete", { bg = "#f38ba8" })
+    vim.api.nvim_set_hl(0, "ModesInsert", { bg = "#334d54" })
+    vim.api.nvim_set_hl(0, "ModesVisual", { bg = "#b4befe" })
 	end,
 	opts = {
 		flavour = "mocha",
@@ -31,10 +36,6 @@ return {
 			lightspeed = true,
 			markdown = true,
 			mason = true,
-			mini = {
-				enabled = false,
-				indentscope_color = "lavender",
-			},
 			neogit = true,
 			noice = true,
 			neotree = true,

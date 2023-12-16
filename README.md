@@ -41,6 +41,8 @@
 - [markdown-preview.nvim] - Preview Markdown in browser with synchronised scrolling
 - [alpha.nvim] - A lua powered Dashboard for Neovim
 - [better-escape.nvim] - Escape from insert mode without delay when typing
+- [modes.nvim] - Prismatic line decorations for the adventurous Neovim user
+- [nvim-colorizer] - A high-performance color highlighter for Neovim
 
 ## Colorscheme
 
@@ -82,6 +84,8 @@
 [markdown-preview.nvim]: https://github.com/iamcco/markdown-preview.nvim
 [alpha.nvim]: https://github.com/goolord/alpha-nvim
 [better-escape.nvim]: https://github.com/max397574/better-escape.nvim
+[modes.nvim]: https://github.com/mvllow/modes.nvim
+[nvim-colorizer]: https://github.com/NvChad/nvim-colorizer.lua
 
 [catppuccin]: https://github.com/catppuccin/nvim
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim
