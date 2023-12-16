@@ -46,6 +46,7 @@
 - [nvim-autopairs] - A super powerful autopair plugin for Neovim
 - [stay-in-place.nvim] - Neovim plugin that prevent cursor from moving (shift and filter actions)
 - [scrollEOF.nvim] - Scroll past the end of file just like scrolloff option
+- [comment.nvim] - Smart and powerful comment plugin for Neovim
 
 ## Colorscheme
 
@@ -92,6 +93,7 @@
 [nvim-autopairs]: https://github.com/windwp/nvim-autopairs
 [stay-in-place.nvim]: https://github.com/gbprod/stay-in-place.nvim
 [scrollEOF.nvim]: https://github.com/Aasim-A/scrollEOF.nvim
+[comment.nvim]: https://github.com/numToStr/Comment.nvim
 
 [catppuccin]: https://github.com/catppuccin/nvim
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim
