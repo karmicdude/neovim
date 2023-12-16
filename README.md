@@ -40,6 +40,7 @@
 - [flash.nvim] - Navigate your code with search labels, enhanced character motions
 - [markdown-preview.nvim] - Preview Markdown in browser with synchronised scrolling
 - [alpha.nvim] - A lua powered Dashboard for Neovim
+- [better-escape.nvim] - Escape from insert mode without delay when typing
 
 ## Colorscheme
 
@@ -80,6 +81,7 @@
 [flash.nvim]: https://github.com/folke/flash.nvim 
 [markdown-preview.nvim]: https://github.com/iamcco/markdown-preview.nvim
 [alpha.nvim]: https://github.com/goolord/alpha-nvim
+[better-escape.nvim]: https://github.com/max397574/better-escape.nvim
 
 [catppuccin]: https://github.com/catppuccin/nvim
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim
