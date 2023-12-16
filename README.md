@@ -39,6 +39,7 @@
 - [lspkind.nvim] - VSCode-like pictograms for Neovim built-in LSP
 - [flash.nvim] - Navigate your code with search labels, enhanced character motions
 - [markdown-preview.nvim] - Preview Markdown in browser with synchronised scrolling
+- [alpha.nvim] - A lua powered Dashboard for Neovim
 
 ## Colorscheme
 
@@ -78,6 +79,7 @@
 [lspkind.nvim]: https://github.com/onsails/lspkind.nvim
 [flash.nvim]: https://github.com/folke/flash.nvim 
 [markdown-preview.nvim]: https://github.com/iamcco/markdown-preview.nvim
+[alpha.nvim]: https://github.com/goolord/alpha-nvim
 
 [catppuccin]: https://github.com/catppuccin/nvim
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim
