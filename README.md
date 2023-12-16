@@ -43,6 +43,7 @@
 - [better-escape.nvim] - Escape from insert mode without delay when typing
 - [modes.nvim] - Prismatic line decorations for the adventurous Neovim user
 - [nvim-colorizer] - A high-performance color highlighter for Neovim
+- [nvim-autopairs] - A super powerful autopair plugin for Neovim
 
 ## Colorscheme
 
@@ -86,6 +87,7 @@
 [better-escape.nvim]: https://github.com/max397574/better-escape.nvim
 [modes.nvim]: https://github.com/mvllow/modes.nvim
 [nvim-colorizer]: https://github.com/NvChad/nvim-colorizer.lua
+[nvim-autopairs]: https://github.com/windwp/nvim-autopairs
 
 [catppuccin]: https://github.com/catppuccin/nvim
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim
