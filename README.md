@@ -49,6 +49,7 @@
 - [scrollEOF.nvim] - Scroll past the end of file just like scrolloff option
 - [comment.nvim] - Smart and powerful comment plugin for Neovim
 - [twilight.nvim] - Dims inactive portions of the code you're editing using TreeSitter
+- [true-zen.nvim] - Clean and elegant distraction-free writing for Neovim
 
 ## Colorscheme
 
@@ -98,6 +99,7 @@
 [scrollEOF.nvim]: https://github.com/Aasim-A/scrollEOF.nvim
 [comment.nvim]: https://github.com/numToStr/Comment.nvim
 [twilight.nvim]: https://github.com/folke/twilight.nvim
+[true-zen.nvim]: https://github.com/pocco81/true-zen.nvim
 
 [catppuccin]: https://github.com/catppuccin/nvim
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim
