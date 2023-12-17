@@ -1,32 +1,32 @@
 return {
-  "NeogitOrg/neogit",
-  event = "VeryLazy",
-  config = true,
-  version = "*",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-telescope/telescope.nvim",
-  },
-  opts = {
-    remember_settings = true,
-    auto_refresh = true,
-    use_per_project_settings = true,
-    disable_hint = true,
-    use_default_keymaps = false,
-    disable_context_highlighting = true,
-    signs = {
-      hunk = { "", "" },
-      item = { "", "" },
-      section = { "", "" },
-    },
-    integrations = {
-      telescope = true,
-      diffview = false,
-    },
+	"NeogitOrg/neogit",
+	event = "VeryLazy",
+	config = true,
+	version = "*",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"nvim-telescope/telescope.nvim",
+	},
+	opts = {
+		remember_settings = true,
+		auto_refresh = true,
+		use_per_project_settings = true,
+		disable_hint = true,
+		use_default_keymaps = false,
+		disable_context_highlighting = true,
+		signs = {
+			hunk = { "", "" },
+			item = { "", "" },
+			section = { "", "" },
+		},
+		integrations = {
+			telescope = true,
+			diffview = false,
+		},
 		mappings = {
-      rebase_editor = {},
-      commit_editor = {},
-		  finder = {
+			rebase_editor = {},
+			commit_editor = {},
+			finder = {
 				["<cr>"] = "Select",
 				["<esc>"] = "Close",
 				["<tab>"] = "MultiselectToggleNext",
@@ -78,4 +78,3 @@ return {
 		},
 	},
 }
-

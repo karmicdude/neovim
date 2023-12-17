@@ -1,12 +1,12 @@
-return   {
-  'echasnovski/mini.splitjoin',
-  version = '*',
-  event = "BufReadPost",
-  opts = {
-    mappings = {
-      toggle = '',
-      split = '',
-      join = '',
-    },
-  }
+return {
+	"echasnovski/mini.splitjoin",
+	version = "*",
+	event = "BufReadPost",
+	opts = {
+		mappings = {
+			toggle = "",
+			split = "",
+			join = "",
+		},
+	},
 }

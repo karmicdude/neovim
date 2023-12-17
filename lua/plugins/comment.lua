@@ -1,7 +1,7 @@
 return {
-  "numToStr/Comment.nvim",
-  event = "VeryLazy",
-  opts = {
-    ignore = "^$"
-  }
+	"numToStr/Comment.nvim",
+	event = "VeryLazy",
+	opts = {
+		ignore = "^$",
+	},
 }
