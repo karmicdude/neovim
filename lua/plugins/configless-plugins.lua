@@ -1,5 +1,5 @@
 return {
-	{ "NvChad/nvim-colorizer.lua", event = "BufReadPost", opts = {} },
-	{ "echasnovski/mini.trailspace", version = false, event = "BufReadPost", opts = {} },
-	{ "folke/neodev.nvim", opts = {} },
+  { "NvChad/nvim-colorizer.lua",   event = "BufReadPost", version = false, opts = {} },
+  { "echasnovski/mini.trailspace", event = "BufReadPost", opts = {} },
+  { "folke/neodev.nvim",           opts = {} },
 }

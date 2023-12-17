@@ -1,10 +1,10 @@
 return {
-	"kylechui/nvim-surround",
-	version = false,
-	event = "VeryLazy",
-	opts = {
-		keymaps = {
-			visual = ",s",
-		},
-	},
+  "kylechui/nvim-surround",
+  version = false,
+  event = "VeryLazy",
+  opts = {
+    keymaps = {
+      visual = ",s",
+    },
+  },
 }
