@@ -5,7 +5,7 @@
 - [lazy.nvim] - A modern plugin manager for Neovim
 - [barbecue.nvim] - A VS Code like winbar for Neovim
 - [nvim-navic] - Simple winbar/statusline plugin that shows your current code context
-- [nvim-web-devicons] - Lua fork of `vim-web-devicons` for Neovim
+- [nvim-web-devicons] - A pack of icons for Neovim
 - [neo-tree.nvim] - A filesystem, buffers, git and other tree like structures manager
 - [nvim-window-picker] - Prompts the user to pick a window and returns the window id
 - [telescope.nvim] - A highly extendable fuzzy finder over lists
@@ -50,6 +50,13 @@
 - [comment.nvim] - Smart and powerful comment plugin for Neovim
 - [twilight.nvim] - Dims inactive portions of the code you're editing using TreeSitter
 - [true-zen.nvim] - Clean and elegant distraction-free writing for Neovim
+- [neodev.nvim] - Neovim setup for init.lua and plugin development
+- [mason.nvim] - Easily install and manage LSP servers, DAP servers, linters, and formatter
+- [mason-lspconfig.nvim] - Extension to [mason.nvim] that makes it easier to use lspconfig
+- [nvim-lspconfig] - Set of configs for Neovim LSP
+- [mason-tool-installer.nvim] - Install and upgrade linters and formatters
+- [efmls-configs-nvim] - An unofficial collection of linters and formatters configured for
+  `efm-langserver`
 
 ## Colorscheme
 
@@ -88,7 +95,7 @@
 [cmp-luasnip]: https://github.com/saadparwaiz1/cmp_luasnip
 [luasnip]: https://github.com/L3MON4D3/LuaSnip
 [lspkind.nvim]: https://github.com/onsails/lspkind.nvim
-[flash.nvim]: https://github.com/folke/flash.nvim 
+[flash.nvim]: https://github.com/folke/flash.nvim
 [markdown-preview.nvim]: https://github.com/iamcco/markdown-preview.nvim
 [alpha.nvim]: https://github.com/goolord/alpha-nvim
 [better-escape.nvim]: https://github.com/max397574/better-escape.nvim
@@ -100,7 +107,12 @@
 [comment.nvim]: https://github.com/numToStr/Comment.nvim
 [twilight.nvim]: https://github.com/folke/twilight.nvim
 [true-zen.nvim]: https://github.com/pocco81/true-zen.nvim
-
+[neodev.nvim]: https://github.com/folke/neodev.nvim
+[mason.nvim]: https://github.com/williamboman/mason.nvim
+[mason-lspconfig.nvim]: https://github.com/williamboman/mason-lspconfig.nvim
+[mason-tool-installer.nvim]: https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
+[nvim-lspconfig]: https://github.com/neovim/nvim-lspconfig
+[efmls-configs-nvim]: https://github.com/creativenull/efmls-configs-nvim
 [catppuccin]: https://github.com/catppuccin/nvim
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim
 [image.nvim]: https://github.com/3rd/image.nvim

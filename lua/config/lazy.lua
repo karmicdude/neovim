@@ -1,33 +1,29 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",
-    lazypath,
-  })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable",
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
 local opts = {
-	defaults = {
-		lazy = true,
-	},
-	checker = { enable = true, },
+	defaults = { lazy = true },
+	checker = { enable = true },
 	install = {
-		colorscheme = { "catppuccin", "habamax", },
+		colorscheme = { "catppuccin", "habamax" },
 		missing = true,
 	},
 	change_detection = {
-	    enabled = true,
-	    notify = false,
+		enabled = true,
+		notify = false,
 	},
 	performance = {
-		cache = {
-			enabled = true,
-		},
+		cache = { enabled = true },
 		rtp = {
 			disabled_plugins = {
 				"gzip",
@@ -48,6 +44,7 @@ local plugins = {
 	{ import = "plugins.colorschemas", enabled = true },
 	{ import = "plugins", enabled = true },
 	{ import = "plugins.cmp", enabled = true },
+	{ import = "plugins.lsp", enabled = true },
 }
 
 require("lazy").setup(plugins, opts)

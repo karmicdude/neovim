@@ -1,0 +1,12 @@
+---
+singleQuote: true
+bracketSpacing: false
+trailingComma: all
+proseWrap: always
+arrowParens: avoid
+endOfLine: 'auto'
+printWidth: 100
+overrides:
+  - files: "*.md"
+    options:
+      tabWidth: 2
