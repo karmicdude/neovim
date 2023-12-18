@@ -56,6 +56,7 @@
 - [nvim-lspconfig] - Set of configs for Neovim LSP
 - [mason-tool-installer.nvim] - Install and upgrade linters and formatters
 - [conform.nvim] - Lightweight yet powerful formatter plugin for Neovim
+- [nvim-lint] - An asynchronous linter plugin for Neovim
 
 ## Colorscheme
 
@@ -116,3 +117,4 @@
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim
 [image.nvim]: https://github.com/3rd/image.nvim
 [nui.nvim]: https://github.com/MunifTanjim/nui.nvim
+[nvim-lint]: https://github.com/mfussenegger/nvim-lint
