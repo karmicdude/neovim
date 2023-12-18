@@ -11,17 +11,17 @@ local fmt = require("luasnip.extras.fmt").fmt
 -- local sn = ls.snippet_node
 
 ls.add_snippets("all", {
-  s(
-    "!prettier-ignore-block",
-    fmt(
-      [[
+	s(
+		"!prettier-ignore-block",
+		fmt(
+			[[
       <!-- prettier-ignore-start -->
       {}
       <!-- prettier-ignore-end -->
       ]],
-      {
-        i(1),
-      }
-    )
-  ),
+			{
+				i(1),
+			}
+		)
+	),
 })

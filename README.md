@@ -54,10 +54,8 @@
 - [mason.nvim] - Easily install and manage LSP servers, DAP servers, linters, and formatter
 - [mason-lspconfig.nvim] - Extension to [mason.nvim] that makes it easier to use lspconfig
 - [nvim-lspconfig] - Set of configs for Neovim LSP
-- [lsp-format.nvim] - A wrapper around Neovims native LSP formatting.
 - [mason-tool-installer.nvim] - Install and upgrade linters and formatters
-- [efmls-configs-nvim] - An unofficial collection of linters and formatters configured for
-  `efm-langserver`
+- [conform.nvim] - Lightweight yet powerful formatter plugin for Neovim
 
 ## Colorscheme
 
@@ -111,10 +109,9 @@
 [neodev.nvim]: https://github.com/folke/neodev.nvim
 [mason.nvim]: https://github.com/williamboman/mason.nvim
 [mason-lspconfig.nvim]: https://github.com/williamboman/mason-lspconfig.nvim
-[lsp-format.nvim]: https://github.com/lukas-reineke/lsp-format.nvim
 [mason-tool-installer.nvim]: https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
 [nvim-lspconfig]: https://github.com/neovim/nvim-lspconfig
-[efmls-configs-nvim]: https://github.com/creativenull/efmls-configs-nvim
+[conform.nvim]: https://github.com/stevearc/conform.nvim
 [catppuccin]: https://github.com/catppuccin/nvim
 [plenary.nvim]: https://github.com/nvim-lua/plenary.nvim
 [image.nvim]: https://github.com/3rd/image.nvim
