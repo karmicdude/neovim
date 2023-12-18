@@ -1,11 +1,11 @@
 local tools = {}
 
 local formatters = {
+	"goimports",
 	"jsonnetfmt",
 	"prettier",
 	"shfmt",
 	"stylua",
-	"goimports",
 }
 
 local linters = {
@@ -13,6 +13,7 @@ local linters = {
 	"ansible-lint",
 	"black",
 	"codespell",
+	"commitlint",
 	"editorconfig-checker",
 	"gitlint",
 	"isort",
@@ -21,7 +22,6 @@ local linters = {
 	"markdownlint",
 	"rstcheck",
 	"shellcheck",
-	"shellharden",
 	"tflint",
 	"yamllint",
 }

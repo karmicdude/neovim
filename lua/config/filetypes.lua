@@ -8,6 +8,16 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+-- fish
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "fish",
+	callback = function()
+		vim.opt.shiftwidth = 4
+		vim.opt.tabstop = 4
+		vim.opt.softtabstop = 4
+	end,
+})
+
 -- Packer
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "hcl",
