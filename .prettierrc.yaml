@@ -7,6 +7,6 @@ arrowParens: avoid
 endOfLine: 'auto'
 printWidth: 100
 overrides:
-  - files: "*.md"
+  - files: '*.md'
     options:
       tabWidth: 2

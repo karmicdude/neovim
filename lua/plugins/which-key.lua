@@ -1,0 +1,28 @@
+return {}
+-- return {
+-- 	"folke/which-key.nvim",
+-- 	event = "VeryLazy",
+-- 	init = function()
+-- 		vim.o.timeout = true
+-- 		vim.o.timeoutlen = 700
+
+-- 		-- local wk = require("which-key")
+-- 		-- wk.register(mappings_n, _opts)
+-- 		-- wk.register(mappings_v, opts_v)
+-- 		-- wk.register(leader_mappings_n, leader_opts_n)
+-- 		-- wk.register(leader_mappings_v, leader_opts_v)
+-- 		-- wk.register(comma_mappings_n, comma_opts_n)
+-- 		-- wk.register(comma_mappings_v, comma_opts_v)
+-- 		-- wk.register(backslash_mappings_n_v, backslash_opts_n_v)
+-- 	end,
+-- 	opts = {
+-- 		key_labels = {
+-- 			["<space>"] = "<SPC>",
+-- 			["<cr>"] = "<RETURN>",
+-- 			["<tab>"] = "<TAB>",
+-- 		},
+-- 		window = {
+-- 			border = "single",
+-- 		},
+-- 	},
+-- }
