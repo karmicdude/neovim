@@ -42,6 +42,7 @@ return {
 			},
 			completion = {
 				completeopt = "menu,menuone,preview,noselect",
+				keyword_length = 2,
 			},
 			snippet = {
 				expand = function(args)

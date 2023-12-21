@@ -7,7 +7,7 @@ return {
 				enabled = true,
 				font = "+2",
 			},
-			twilight = true,
+			twilight = false,
 		},
 	},
 }

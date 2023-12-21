@@ -2,6 +2,7 @@ return {
 	"mfussenegger/nvim-lint",
 	event = { "BufReadPre", "BufNewFile" },
 	init = function()
+		vim.diagnostic.config({ virtual_text = false })
 		vim.api.nvim_create_autocmd({ "TextChanged" }, {
 			callback = function()
 				require("lint").try_lint()
