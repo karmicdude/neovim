@@ -62,6 +62,7 @@
 - [conform.nvim] - Lightweight yet powerful formatter plugin for Neovim
 - [nvim-lint] - An asynchronous linter plugin for Neovim
 - [which-key.nvim] - Displays a popup with possible key bindings of the command you started typing
+- [inc-rename.nvim] - Incremental LSP renaming
 
 [lazy.nvim]: https://github.com/folke/lazy.nvim
 [barbecue.nvim]: https://github.com/utilyre/barbecue.nvim
@@ -120,3 +121,4 @@
 [nui.nvim]: https://github.com/MunifTanjim/nui.nvim
 [nvim-lint]: https://github.com/mfussenegger/nvim-lint
 [which-key.nvim]: https://github.com/folke/which-key.nvim
+[inc-rename.nvim]: https://github.com/smjonas/inc-rename.nvim
