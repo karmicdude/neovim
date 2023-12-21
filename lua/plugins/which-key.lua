@@ -138,13 +138,18 @@ local comma_mappings_normal = {
 		["a"] = { "<CMD>TZAtaraxis<CR>", "󰰶 Zen: Ataraxis mode" },
 		["d"] = { "<CMD>Twilight<CR>", "󰰶 Twilight: Dim code block" },
 		["f"] = { "<CMD>TZFocus<CR>", "󰰶 Zen: Focus mode" },
-		["n"] = { "<CMD>TZNarrow<CR>", "󰰶 Zen: Narrow mode" },
 	},
 	["<tab>"] = { "<CMD>Neotree toggle<CR>", " NeoTree toggle" },
 }
 local comma_opts_normal = vim.tbl_deep_extend("force", opts_default, { prefix = "," })
 
-local comma_mappings_visual = {}
+local comma_mappings_visual = {
+	z = {
+		name = " 󰰶 ZEN mode",
+		["n"] = { "<CMD>'<,'>TZNarrow<CR>", "󰰶 Zen: Narrow mode" },
+	},
+}
+
 local comma_opts_visual = vim.tbl_deep_extend("force", opts_default, { prefix = ",", mode = "v" })
 
 -- BACKSLASH --------------------------

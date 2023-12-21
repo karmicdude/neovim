@@ -20,6 +20,7 @@
 - [nui.nvim] - UI Component Library for Neovim
 - [project.nvim] - The superior project management solution for Neovim
 - [nvim-treesitter] - Neovim Treesitter configurations and abstraction layer
+- [hlargs.nvim] - Highlight arguments definitions and usages, using Treesitter
 - [indent-blankline.nvim] - Indent guides for Neovim
 - [mini.indentscope] - For current indent scope highlight
 - [mini.splitjoin] - Split and join arguments
@@ -40,6 +41,7 @@
 - [cmp-path] - [nvim-cmp] source for path completion
 - [cmp-rg] - `ripgrep` source for [nvim-cmp]
 - [cmp-luasnip] - [luasnip] completion source for [nvim-cmp]
+- [cmp-fish] - `fish` shell completion for [nvim-cmp]
 - [luasnip] - Snippet engine for Neovim written in Lua
 - [lspkind.nvim] - VSCode-like pictograms for Neovim built-in LSP
 - [flash.nvim] - Navigate your code with search labels, enhanced character motions
@@ -95,6 +97,7 @@
 [cmp-path]: https://github.com/hrsh7th/cmp-path
 [cmp-rg]: https://github.com/lukas-reineke/cmp-rg
 [cmp-luasnip]: https://github.com/saadparwaiz1/cmp_luasnip
+[cmp-fish]: https://github.com/mtoohey31/cmp-fish
 [luasnip]: https://github.com/L3MON4D3/LuaSnip
 [lspkind.nvim]: https://github.com/onsails/lspkind.nvim
 [flash.nvim]: https://github.com/folke/flash.nvim
@@ -122,3 +125,4 @@
 [nvim-lint]: https://github.com/mfussenegger/nvim-lint
 [which-key.nvim]: https://github.com/folke/which-key.nvim
 [inc-rename.nvim]: https://github.com/smjonas/inc-rename.nvim
+[hlargs.nvim]: https://github.com/m-demare/hlargs.nvim

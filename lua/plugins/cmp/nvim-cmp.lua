@@ -3,13 +3,14 @@ return {
 	event = "InsertEnter",
 	dependencies = {
 		{ "L3MON4D3/LuaSnip" },
-		{ "saadparwaiz1/cmp_luasnip" },
 		{ "hrsh7th/cmp-buffer" },
-		{ "hrsh7th/cmp-path" },
 		{ "hrsh7th/cmp-nvim-lsp" },
+		{ "hrsh7th/cmp-path" },
 		{ "lukas-reineke/cmp-rg" },
-		{ "uga-rosa/cmp-dictionary" },
+		{ "mtoohey31/cmp-fish", ft = "fish" },
 		{ "onsails/lspkind.nvim" },
+		{ "saadparwaiz1/cmp_luasnip" },
+		{ "uga-rosa/cmp-dictionary" },
 	},
 	init = function()
 		local cmp = require("cmp")
@@ -71,6 +72,7 @@ return {
 				{ name = "buffer", keyword_length = 3 },
 				{ name = "rg", keyword_length = 3, dup = 0 },
 				{ name = "path" },
+				{ name = "fish" },
 			}),
 		})
 	end,
