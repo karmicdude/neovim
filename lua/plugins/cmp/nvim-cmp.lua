@@ -10,7 +10,6 @@ return {
 		{ "mtoohey31/cmp-fish", ft = "fish" },
 		{ "onsails/lspkind.nvim" },
 		{ "saadparwaiz1/cmp_luasnip" },
-		{ "uga-rosa/cmp-dictionary" },
 	},
 	init = function()
 		local cmp = require("cmp")

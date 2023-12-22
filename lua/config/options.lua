@@ -57,6 +57,13 @@ local options = {
 	updatetime = 200,
 	exrc = true,
 	timeoutlen = 500,
+	spell = false,
+	spelllang = { "en", "ru" },
+	spellfile = {
+		vim.fn.stdpath("config") .. "/spell/user.utf-8.add",
+		vim.fn.stdpath("config") .. "/spell/en.utf-8.add",
+		vim.fn.stdpath("config") .. "/spell/ru.utf-8.add",
+	},
 }
 
 for k, v in pairs(global) do

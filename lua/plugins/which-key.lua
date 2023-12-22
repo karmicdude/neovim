@@ -27,7 +27,7 @@ local mappings_normal = {
 	["<C-S-i>"] = { "<CMD>lua require('conform').format()<CR>", "󰅪 Format document" },
 	["<C-/>"] = { "<Plug>(comment_toggle_linewise_current)", " Comment line" },
 	["gS"] = { "<CMD>lua MiniSplitjoin.toggle()<CR>", " Split or join arguments" },
-	["z?"] = { "<CMD>Telescope spellsuggest<CR>", "󰏪 Spell suggestions" },
+	["z?"] = { "<CMD>Telescope spell_suggest<CR>", "󰏪 Spell suggestions" },
 }
 
 local mappings_visual = {

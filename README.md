@@ -25,7 +25,7 @@
 - [mini.indentscope] - For current indent scope highlight
 - [mini.splitjoin] - Split and join arguments
 - [mini.trailspace] - Highlight and remove trainling spaces
-- [tabby.nvim] - A declarative, highly configurable, and neovim style tabline plugin
+- [tabby.nvim] - A declarative, highly configurable, and Neovim style tabline plugin
 - [gitsigns.nvim] - Git integration for buffers
 - [gitlinker.nvim] - Generates shareable file permalinks to Git web services
 - [neogit] - An interactive and powerful Git interface for Neovim
@@ -34,10 +34,10 @@
 - [lualine.nvim] - A blazing fast and easy to configure Neovim statusline written in Lua
 - [nvim-surround] - Add/change/delete surrounding delimiter pairs with ease
 - [virt-column.nvim] - Display a character as the colorcolumn
-- [nvim-cmp] - A completion plugin for neovim coded in Lua
+- [nvim-cmp] - A completion plugin for Neovim coded in Lua
 - [cmp-buffer] - [nvim-cmp] source for buffer words
 - [cmp-dictionary] - A dictionary completion source for [nvim-cmp]
-- [cmp-nvim-lsp] - [nvim-cmp] source for neovim builtin LSP client
+- [cmp-nvim-lsp] - [nvim-cmp] source for Neovim builtin LSP client
 - [cmp-path] - [nvim-cmp] source for path completion
 - [cmp-rg] - `ripgrep` source for [nvim-cmp]
 - [cmp-luasnip] - [luasnip] completion source for [nvim-cmp]
@@ -63,7 +63,7 @@
 - [mason-tool-installer.nvim] - Install and upgrade linters and formatters
 - [conform.nvim] - Lightweight yet powerful formatter plugin for Neovim
 - [nvim-lint] - An asynchronous linter plugin for Neovim
-- [which-key.nvim] - Displays a popup with possible key bindings of the command you started typing
+- [which-key.nvim] - Displays a pop-up with possible key bindings of the command you started typing
 - [inc-rename.nvim] - Incremental LSP renaming
 
 [lazy.nvim]: https://github.com/folke/lazy.nvim
