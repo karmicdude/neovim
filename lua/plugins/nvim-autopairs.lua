@@ -5,7 +5,8 @@ return {
 	opts = {
 		check_ts = true,
 		enable_check_bracket_line = true,
-		iignored_next_char = [=[[%w%%%'%[%"%.%`%$]]=],
-		disable_filetype = { "TelescopePrompt" },
+		chars = { "{", "[", "(", '"', "'", "`" },
+		ignored_next_char = [=[[%w%%%'%[%"%.%`%$]]=],
+		disable_filetype = { "TelescopePrompt", "markdown" },
 	},
 }
