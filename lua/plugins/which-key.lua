@@ -27,6 +27,7 @@ local mappings_normal = {
 	["<C-S-i>"] = { "<CMD>lua require('conform').format()<CR>", "󰅪 Format document" },
 	["<C-/>"] = { "<Plug>(comment_toggle_linewise_current)", " Comment line" },
 	["gS"] = { "<CMD>lua MiniSplitjoin.toggle()<CR>", " Split or join arguments" },
+	["gX"] = { "<CMD>URLOpenUnderCursor<CR>", " Open URL under cursor" },
 	["z?"] = { "<CMD>Telescope spell_suggest<CR>", "󰏪 Spell suggestions" },
 }
 
@@ -85,7 +86,7 @@ local leader_opts_visual = vim.tbl_deep_extend("force", opts_default, { prefix =
 -- COMMA -----------------------------
 local comma_mappings_normal = {
 	d = {
-		name = "󰅪 LSP / Diagnostic",
+		name = " 󰅪 LSP / Diagnostic",
 		["a"] = { "<CMD>lua vim.lsp.buf.code_action()<CR>", "󰅪 Code actions" },
 		["d"] = { "<CMD>Telescope lsp_definitions<CR>", "󰅪 Go To Definition" },
 		["f"] = { "<CMD>lua require('conform').format()<CR>", "󰅪 Format document" },
@@ -128,9 +129,9 @@ local comma_mappings_normal = {
 		["]"] = { "<CMD>Gitsigns next_hunk<CR>", " Git: Next hunk" },
 		["["] = { "<CMD>Gitsigns prev_hunk<CR>", " Git: Previous hunk" },
 	},
-	n = { "<CMD>nohlsearch<CR>", " nohlsearch" },
+	n = { "<CMD>set hlsearch!<CR>", " Toggle hlsearch" },
 	m = {
-		name = " Marks",
+		name = "  Marks",
 		["l"] = { "<CMD>Telescope marks<CR>", " List marks" },
 	},
 	e = { "<CMD>Neotree focus<CR>", " NeoTree focus" },
