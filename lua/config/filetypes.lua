@@ -6,6 +6,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt.tabstop = 2
 		vim.opt.softtabstop = 2
 		vim.opt.spell = true
+		vim.opt.textwidth = 100
 	end,
 })
 
@@ -42,6 +43,21 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	pattern = { "*/templates/*.j2" },
 	callback = function()
-		vim.bo.filetype = "yaml-jinja"
+		vim.bo.filetype = "yaml.jinja"
+	end,
+})
+
+-- Ansible: yaml.ansible
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = {
+		"*/tasks/*.yaml",
+		"*/defaults/*.yaml",
+		"*/handlers/*.yaml",
+		"*/playbooks/*.yaml",
+		"*/vars/*.yaml",
+		"*/meta/*.yaml",
+	},
+	callback = function()
+		vim.bo.filetype = "yaml.ansible"
 	end,
 })

@@ -39,6 +39,7 @@ local opts_visual = vim.tbl_deep_extend("force", opts_default, { mode = "v" })
 local mappings_insert = {
 	["<C-S-i>"] = { "<CMD>lua require('conform').format()<CR>", "󰅪 LSP: Format document" },
 }
+
 local opts_insert = vim.tbl_deep_extend("force", opts_default, { mode = "i" })
 
 -- LEADER -----------------------------
@@ -54,7 +55,22 @@ local leader_mappings_normal = {
 		["]"] = { "<CMD>bnext<CR>", " Next buffer" },
 		["["] = { "<CMD>bprevious<CR>", " Previous buffer" },
 	},
+	h = {
+		name = "  Helpers",
+		["a"] = { "<CMD>Telescope autocommands<CR>", " List autocommands" },
+		["b"] = { "<CMD>Telescope builtin<CR>", " Builtins" },
+		["c"] = { "<CMD>Telescope colorscheme<CR>", " Colorschemas" },
+		["h"] = { "<CMD>Telescope help_tags<CR>", " List available help tags" },
+		["s"] = { "<CMD>Telescope symbols<CR>", " Symbols" },
+		["k"] = { "<CMD>Telescope keymaps<CR>", " List mappings" },
+		["l"] = { "<CMD>Telescope highlights<CR>", " Highlights" },
+		["m"] = { "<CMD>Telescope man_pages<CR>", " List man pages" },
+		["o"] = { "<CMD>Telescope vim_options<CR>", " List nvim options" },
+		["p"] = { "<CMD>Telescope reloader<CR>", " Reload plugins" },
+		["t"] = { "<CMD>Telescope filetypes<CR>", " Filetypes" },
+	},
 }
+
 local leader_opts_normal = vim.tbl_deep_extend("force", opts_default, { prefix = "<leader>" })
 
 local leader_mappings_visual = {
@@ -63,6 +79,7 @@ local leader_mappings_visual = {
 		["y"] = { "<CMD>GitLink<CR>", " Git: Copy permalink to keyboard" },
 	},
 }
+
 local leader_opts_visual = vim.tbl_deep_extend("force", opts_default, { prefix = "<leader>", mode = "v" })
 
 -- COMMA -----------------------------
