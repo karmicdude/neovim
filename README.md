@@ -65,6 +65,7 @@
 - [nvim-lint] - An asynchronous linter plugin for Neovim
 - [which-key.nvim] - Displays a pop-up with possible key bindings of the command you started typing
 - [inc-rename.nvim] - Incremental LSP renaming
+- [url-open] - Open URL under cursor in Neovim without netrw with default browser
 
 [lazy.nvim]: https://github.com/folke/lazy.nvim
 [barbecue.nvim]: https://github.com/utilyre/barbecue.nvim
@@ -126,3 +127,4 @@
 [which-key.nvim]: https://github.com/folke/which-key.nvim
 [inc-rename.nvim]: https://github.com/smjonas/inc-rename.nvim
 [hlargs.nvim]: https://github.com/m-demare/hlargs.nvim
+[url-open]: https://github.com/sontungexpt/url-open
