@@ -48,6 +48,9 @@ local config = function()
 		},
 		root_dir = function(fname)
 			return lspconfig.util.root_pattern({
+				".ansible-lint",
+				".ansible-lint.yaml",
+				".ansible-lint.yml",
 				".yamllint.yaml",
 				".yamllint.yml",
 				"requirements.yaml",
@@ -67,6 +70,7 @@ local config = function()
 					enabled = true,
 					lint = {
 						enabled = true,
+						path = "~/.pyenv/shims/ansible-lint",
 					},
 				},
 			},
