@@ -13,7 +13,7 @@ local options = {
 	shiftwidth = 2,
 	softtabstop = 2,
 	expandtab = true,
-	smartindent = true,
+	autoindent = true,
 	wrap = false,
 	-- Search
 	incsearch = true,
