@@ -1,230 +1,798 @@
 local utils = require("core.utils")
 
-local opts_default = {
-	mode = "n",
-	noremap = true,
-	nowait = true,
-	silent = true,
-}
--- Common mappings --------------------
-local mappings_normal = {
-	-- splits
-	["<C-\\>"] = { "<CMD>vsplit<CR>", "󰖯 Split: Vertically" },
-	["<C-->"] = { "<CMD>split<CR>", "󰖯 Split: Horisontally" },
-	-- tabs
-	["<C-CR>"] = { "<CMD>tabnew<CR>", "󰖯 Tab: New" },
-	["<C-S-BS>"] = { "<CMD>tabclose<CR>", "󰖯 Tab: Close" },
-	["<C-h>"] = { "<CMD>tabprevious<CR>", "󰖯 Tab: Previous" },
-	["<C-l>"] = { "<CMD>tabnext<CR>", "󰖯 Tab: Next" },
-	["<C-S-r>"] = { utils.rename_tab, "󰖯 Tab: Rename" },
-	-- wins
-	["<C-j>"] = { "<CMD>wincmd h<CR>", "󰖯 Window: Go to the left window" },
-	["<C-k>"] = { "<CMD>wincmd l<CR>", "󰖯 Window: Go to the right window" },
-	["<C-TAB>"] = { utils.pick_window, "󰖯 Window: Pick window for focus" },
-	--
-	["<C-S-w>"] = { "<CMD>noautocmd w<CR>", " Save without autocmd" },
-	["<C-S-p>"] = { "<CMD>Telescope projects<CR>", " Projects" },
-	["<C-S-i>"] = { "<CMD>lua require('conform').format()<CR>", "󰅪 Format document" },
-	["<C-/>"] = { "<Plug>(comment_toggle_linewise_current)", " Comment line" },
-	["gS"] = { "<CMD>lua MiniSplitjoin.toggle()<CR>", " Split or join arguments" },
-	["gX"] = { "<CMD>URLOpenUnderCursor<CR>", " Open URL under cursor" },
-	["z?"] = { "<CMD>Telescope spell_suggest<CR>", "󰏪 Spell suggestions" },
-}
-
-local mappings_visual = {
-	["<C-/>"] = { "<Plug>(comment_toggle_linewise_visual)", " Comment selection" },
-}
-local opts_visual = vim.tbl_deep_extend("force", opts_default, { mode = "v" })
-
--- Insert mappings --------------------
-local mappings_insert = {
-	["<C-S-i>"] = { "<CMD>lua require('conform').format()<CR>", "󰅪 LSP: Format document" },
-}
-
-local opts_insert = vim.tbl_deep_extend("force", opts_default, { mode = "i" })
-
--- LEADER -----------------------------
-local leader_mappings_normal = {
-	f = {
-		["b"] = { "<CMD>Telescope buffers<CR>", " Find opened [b]uffers" },
-		["f"] = { "<CMD>Telescope find_files<CR>", " Find [f]iles in CWD" },
-		["g"] = { "<CMD>Telescope grep_string<CR>", " [g]rep string" },
-		["l"] = { "<CMD>Telescope live_grep<CR>", " [l]ive grep" },
-		["t"] = { "<CMD>TodoTelescope<CR>", " Find TODO" },
-		["/"] = { "<CMD>Telescope current_buffer_fuzzy_find<CR>", " Search text in current buffer" },
-		["?"] = { "<CMD>Telescope oldfiles<CR>", " Recent files" },
-		["]"] = { "<CMD>bnext<CR>", " Next buffer" },
-		["["] = { "<CMD>bprevious<CR>", " Previous buffer" },
-	},
-	h = {
-		name = "  Helpers",
-		["a"] = { "<CMD>Telescope autocommands<CR>", " List autocommands" },
-		["b"] = { "<CMD>Telescope builtin<CR>", " Builtins" },
-		["c"] = { "<CMD>Telescope colorscheme<CR>", " Colorschemas" },
-		["h"] = { "<CMD>Telescope help_tags<CR>", " List available help tags" },
-		["s"] = { "<CMD>Telescope symbols<CR>", " Symbols" },
-		["k"] = { "<CMD>Telescope keymaps<CR>", " List mappings" },
-		["l"] = { "<CMD>Telescope highlights<CR>", " Highlights" },
-		["m"] = { "<CMD>Telescope man_pages<CR>", " List man pages" },
-		["o"] = { "<CMD>Telescope vim_options<CR>", " List nvim options" },
-		["p"] = { "<CMD>Telescope reloader<CR>", " Reload plugins" },
-		["t"] = { "<CMD>Telescope filetypes<CR>", " Filetypes" },
-	},
-}
-
-local leader_opts_normal = vim.tbl_deep_extend("force", opts_default, { prefix = "<leader>" })
-
-local leader_mappings_visual = {
-	g = {
-		["Y"] = { "<CMD>GitLink!<CR>", " Git: Open permalink in browser" },
-		["y"] = { "<CMD>GitLink<CR>", " Git: Copy permalink to keyboard" },
-	},
-}
-
-local leader_opts_visual = vim.tbl_deep_extend("force", opts_default, { prefix = "<leader>", mode = "v" })
-
--- COMMA -----------------------------
-local comma_mappings_normal = {
-	d = {
-		name = " 󰅪 LSP / Diagnostic",
-		["a"] = { "<CMD>lua vim.lsp.buf.code_action()<CR>", "󰅪 Code actions" },
-		["d"] = { "<CMD>Telescope lsp_definitions<CR>", "󰅪 Go To Definition" },
-		["f"] = { "<CMD>lua require('conform').format()<CR>", "󰅪 Format document" },
-		["i"] = { "<CMD>Telescope lsp_implementations<CR>", "󰅪 Go To Implementation" },
-		["I"] = { "<CMD>Telescope lsp_incoming_calls<CR>", "󰅪 Incoming calls" },
-		["j"] = { "<CMD>lua vim.diagnostic.goto_next()<CR>", "󰅪 Go to next diagnostic" },
-		["k"] = { "<CMD>lua vim.diagnostic.goto_prev()<CR>", "󰅪 Go to previous diagnostic" },
-		["l"] = { "<CMD>Telescope diagnostics<CR>", "󰅪 List of diagnostics" },
-		["O"] = { "<CMD>Telescope lsp_outgoing_calls<CR>", "󰅪 Outgoing calls" },
-		["r"] = { "<CMD>Telescope lsp_references<CR>", "󰅪 Go to references" },
-		["R"] = { "󰅪 Rename" }, -- see config.keymaps for `,dR` mapping
-		["s"] = { "<CMD>Telescope lsp_document_symbols<CR>", "󰅪 Document symbols" },
-		["S"] = { "<CMD>Telescope treesitter<CR>", "󰅪 Treesitter symbols" },
-		["t"] = { "<CMD>Telescope lsp_type_definitions<CR>", "󰅪 Type Definition" },
-		["W"] = { "<CMD>Telescope lsp_dynamic_workspace_symbols<CR>", "󰅪 Dynamic Workspace symbols" },
-		["w"] = { "<CMD>Telescope lsp_workspace_symbols<CR>", "󰅪 Workspace symbols" },
-		["?"] = { "<CMD>lua vim.diagnostic.open_float()<CR>", "󰅪 Show float diagnostic message" },
-	},
-	g = {
-		name = " GIT",
-		["a"] = { "<CMD>Gitsigns stage_buffer<CR>", " Git: Stage buffer" },
-		["b"] = { "<CMD>Telescope git_branches<CR>", " Git: [b]ranches" },
-		["C"] = { "<CMD>Telescope git_bcommits<CR>", " Git: Buffer's [c]commits" },
-		["c"] = { "<CMD>Telescope git_commits<CR>", " Git: [c]commits" },
-		["d"] = { "<CMD>DiffviewOpen<CR>", " Git: Diffview" },
-		["D"] = { "<CMD>Gitsigns diffthis<CR>", " Git: Show diff this" },
-		["f"] = { "<CMD>Telescope git_files<CR>", " Git: find [f]iles" },
-		["g"] = { "<CMD>Neogit<CR>", " NeoGit" },
-		["h"] = { "<CMD>Gitsigns toggle_deleted<CR>", " Git: Toggle deleted lines" },
-		["H"] = { "<CMD>Gitsigns toggle_linehl<CR>", " Git: Toggle line highliting" },
-		["l"] = { "<CMD>DiffviewFileHistory<CR>", " Git: Show Diffview File History" },
-		["R"] = { "<CMD>Gitsigns reset_buffer<CR>", " Git: Reset buffer status" },
-		["r"] = { "<CMD>Gitsigns reset_hunk<CR>", " Git: Reset hunk" },
-		["S"] = { "<CMD>Telescope git_stash<CR>", " Git: Show [S]tash" },
-		["s"] = { "<CMD>Telescope git_status<CR>", " Git: Show [s]tatus" },
-		["w"] = { "<CMD>Gitsigns toggle_current_line_blame<CR>", " Git: toggle current line blame" },
-		["Y"] = { "<CMD>GitLink!<CR>", " Git: Open permalink in browser" },
-		["y"] = { "<CMD>GitLink<CR>", " Git: Copy permalink to keyboard" },
-		["?"] = { "<CMD>Gitsigns preview_hunk_inline<CR>", " Git: Show preview for hunk" },
-		["]"] = { "<CMD>Gitsigns next_hunk<CR>", " Git: Next hunk" },
-		["["] = { "<CMD>Gitsigns prev_hunk<CR>", " Git: Previous hunk" },
-	},
-	n = { "<CMD>set hlsearch!<CR>", " Toggle hlsearch" },
-	m = {
-		name = "  Marks",
-		["l"] = { "<CMD>Telescope marks<CR>", " List marks" },
-	},
-	e = { "<CMD>Neotree focus<CR>", " NeoTree focus" },
-	t = {
-		name = "  NeoTree: Left Sidebar",
-		t = { "<CMD>Neotree toggle left<CR>", " Toggle" },
-		f = { "<CMD>Neotree focus left<CR>", " Focus" },
-		r = { "<CMD>Neotree reveal left<CR>", " Reveal" },
-		g = { "<CMD>Neotree git_status left<CR>", " Git status" },
-		b = { "<CMD>Neotree buffers left<CR>", " Buffers" },
-	},
-	T = {
-		name = "  NeoTree: Float Window",
-		t = { "<CMD>Neotree toggle float<CR>", " Toggle float" },
-		f = { "<CMD>Neotree focus float<CR>", " Focus float" },
-		r = { "<CMD>Neotree reveal float<CR>", " Reveal float" },
-		g = { "<CMD>Neotree git_status float<CR>", " Git status float" },
-		b = { "<CMD>Neotree buffers float<CR>", " Buffers float" },
-	},
-	z = {
-		name = " 󰰶 ZEN mode",
-		["a"] = { "<CMD>TZAtaraxis<CR>", "󰰶 Zen: Ataraxis mode" },
-		["d"] = { "<CMD>Twilight<CR>", "󰰶 Twilight: Dim code block" },
-		["f"] = { "<CMD>TZFocus<CR>", "󰰶 Zen: Focus mode" },
-	},
-	["<tab>"] = { "<CMD>Neotree toggle<CR>", " NeoTree toggle" },
-}
-local comma_opts_normal = vim.tbl_deep_extend("force", opts_default, { prefix = "," })
-
-local comma_mappings_visual = {
-	z = {
-		name = " 󰰶 ZEN mode",
-		["n"] = { "<CMD>'<,'>TZNarrow<CR>", "󰰶 Zen: Narrow mode" },
-	},
-}
-
-local comma_opts_visual = vim.tbl_deep_extend("force", opts_default, { prefix = ",", mode = "v" })
-
--- BACKSLASH --------------------------
-local backslash_mappings_normal_visual = {
-	["D"] = { "<CMD>bdelete<CR>", " Close buffer" },
-	["q"] = { "<CMD>qa!<CR>", " Force Quit" },
-	["t"] = {
-		name = "  Terminal",
-		t = { "<cmd>lua require('core.utils').ext_terminal()<CR>", " Open terminal tab in current root directory" },
-		f = { "<cmd>lua require('core.utils').ext_terminal('buffer')<CR>", " Open terminal tab in buffer directory" },
-		w = {
-			"<cmd>lua require('core.utils').ext_terminal(nil, 'window')<CR>",
-			" Open terminal split in root directory",
-		},
-		s = {
-			"<cmd>lua require('core.utils').ext_terminal('buffer', 'window')<CR>",
-			" Open terminal split in buffer directory",
-		},
-	},
-}
-
-local backslash_opts_normal_visual = vim.tbl_deep_extend("force", opts_default, {
-	prefix = "\\",
-	mode = { "v", "n" },
-})
-
----------------------------------------
-
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
+	dependencies = {
+		"echasnovski/mini.icons",
+	},
 	init = function()
 		vim.o.timeout = true
 		vim.o.timeoutlen = 700
-
-		local wk = require("which-key")
-		wk.register(mappings_insert, opts_insert)
-		wk.register(mappings_normal, opts_default)
-		wk.register(mappings_visual, opts_visual)
-		wk.register(leader_mappings_normal, leader_opts_normal)
-		wk.register(leader_mappings_visual, leader_opts_visual)
-		wk.register(comma_mappings_normal, comma_opts_normal)
-		wk.register(comma_mappings_visual, comma_opts_visual)
-		wk.register(backslash_mappings_normal_visual, backslash_opts_normal_visual)
 	end,
 	opts = {
-		key_labels = {
-			["<space>"] = "<SPC>",
-			["<cr>"] = "<RETURN>",
-			["<tab>"] = "<TAB>",
+		notify = false,
+		replace = {
+			key = {
+				function(key)
+					return require("which-key.view").format(key)
+				end,
+				{ "<Space>", "SPC" },
+				{ "<CR>", "RETURN" },
+				{ "<tab>", "TAB" },
+			},
 		},
-		window = {
+		win = {
 			border = "single",
 		},
-		triggers_blacklist = {
-			i = { "j", "k" },
-			v = { "j", "k" },
+	},
+	show_help = true,
+	show_keys = true,
+	keys = {
+		-- NORMAL
+		----- tabs
+		{
+			"<C-l>",
+			"<CMD>tabnext<CR>",
+			desc = "󰖯 Tab: Next",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<C-S-r>",
+			utils.rename_tab,
+			desc = "󰖯 Tab: Rename",
+			nowait = true,
+			remap = false,
+		},
+		----- wins
+		{
+			"<C-j>",
+			"<CMD>wincmd h<CR>",
+			desc = "󰖯 Window: Go to the left window",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<C-k>",
+			"<CMD>wincmd l<CR>",
+			desc = "󰖯 Window: Go to the right window",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<C-TAB>",
+			utils.pick_window,
+			desc = "󰖯 Window: Pick window for focus",
+			nowait = true,
+			remap = false,
+		},
+		-----
+		{
+			"<C-S-i>",
+			"<CMD>lua require('conform').format()<CR>",
+			desc = "󰅪 Format document",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<C-S-p>",
+			"<CMD>Telescope projects<CR>",
+			desc = " Projects",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<C-S-w>",
+			"<CMD>noautocmd w<CR>",
+			desc = " Save without autocmd",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"gS",
+			"<CMD>lua MiniSplitjoin.toggle()<CR>",
+			desc = " Split or join arguments",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"gX",
+			"<CMD>URLOpenUnderCursor<CR>",
+			desc = " Open URL under cursor",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"z?",
+			"<CMD>Telescope spell_suggest<CR>",
+			desc = "󰏪 Spell suggestions",
+			nowait = true,
+			remap = false,
+		},
+		-- VISUAL
+		{
+			"<C-/>",
+			"<Plug>(comment_toggle_linewise_visual)",
+			desc = " Comment selection",
+			mode = "v",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"gS",
+			":<C-U>lua MiniSplitjoin.toggle({ region = MiniSplitjoin.get_visual_region() })<CR>",
+			desc = " Split or join arguments",
+			nowait = true,
+			remap = false,
+			mode = { "x" },
+		},
+		-- INSERT
+		{
+			"<C-S-i>",
+			"<CMD>lua require('conform').format()<CR>",
+			desc = "󰅪 LSP: Format document",
+			mode = "i",
+			nowait = true,
+			remap = false,
+		},
+		-- LEADER -----------------------------
+		{
+			"<leader>f/",
+			"<CMD>Telescope current_buffer_fuzzy_find<CR>",
+			desc = " Search text in current buffer",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<leader>f?",
+			"<CMD>Telescope oldfiles<CR>",
+			desc = " Recent files",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<leader>f[",
+			"<CMD>bprevious<CR>",
+			desc = " Previous buffer",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<leader>f]",
+			"<CMD>bnext<CR>",
+			desc = " Next buffer",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<leader>fb",
+			"<CMD>Telescope buffers<CR>",
+			desc = " Find opened [b]uffers",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<leader>ff",
+			"<CMD>Telescope find_files<CR>",
+			desc = " Find [f]iles in CWD",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<leader>fg",
+			"<CMD>Telescope grep_string<CR>",
+			desc = " [g]rep string",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<leader>fl",
+			"<CMD>Telescope live_grep<CR>",
+			desc = " [l]ive grep",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<leader>ft",
+			"<CMD>TodoTelescope<CR>",
+			desc = " Find TODO",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<leader>h",
+			group = "  Helpers",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<leader>ha",
+			"<CMD>Telescope autocommands<CR>",
+			desc = " List autocommands",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<leader>hb",
+			"<CMD>Telescope builtin<CR>",
+			desc = " Builtins",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<leader>hc",
+			"<CMD>Telescope colorscheme<CR>",
+			desc = " Colorschemas",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<leader>hh",
+			"<CMD>Telescope help_tags<CR>",
+			desc = " List available help tags",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<leader>hk",
+			"<CMD>Telescope keymaps<CR>",
+			desc = " List mappings",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<leader>hl",
+			"<CMD>Telescope highlights<CR>",
+			desc = " Highlights",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<leader>hm",
+			"<CMD>Telescope man_pages<CR>",
+			desc = " List man pages",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<leader>ho",
+			"<CMD>Telescope vim_options<CR>",
+			desc = " List nvim options",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<leader>hp",
+			"<CMD>Telescope reloader<CR>",
+			desc = " Reload plugins",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<leader>hs",
+			"<CMD>Telescope symbols<CR>",
+			desc = " Symbols",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<leader>ht",
+			"<CMD>Telescope filetypes<CR>",
+			desc = " Filetypes",
+			nowait = true,
+			remap = false,
+		},
+		-- LEADER VISUAL
+		{
+			"<leader>gY",
+			"<CMD>GitLink!<CR>",
+			desc = " Git: Open permalink in browser",
+			mode = "v",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<leader>gy",
+			"<CMD>GitLink<CR>",
+			desc = " Git: Copy permalink to keyboard",
+			mode = "v",
+			nowait = true,
+			remap = false,
+		},
+		-- COMMA
+		{
+			",<tab>",
+			"<CMD>Neotree toggle<CR>",
+			desc = " NeoTree toggle",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",T",
+			group = "  NeoTree: Float Window",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",Tb",
+			"<CMD>Neotree buffers float<CR>",
+			desc = " Buffers float",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",Tf",
+			"<CMD>Neotree focus float<CR>",
+			desc = " Focus float",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",Tg",
+			"<CMD>Neotree git_status float<CR>",
+			desc = " Git status float",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",Tr",
+			"<CMD>Neotree reveal float<CR>",
+			desc = " Reveal float",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",Tt",
+			"<CMD>Neotree toggle float<CR>",
+			desc = " Toggle float",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",d",
+			group = " 󰅪 LSP / Diagnostic",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",d?",
+			"<CMD>lua vim.diagnostic.open_float()<CR>",
+			desc = "󰅪 Show float diagnostic message",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",dI",
+			"<CMD>Telescope lsp_incoming_calls<CR>",
+			desc = "󰅪 Incoming calls",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",dO",
+			"<CMD>Telescope lsp_outgoing_calls<CR>",
+			desc = "󰅪 Outgoing calls",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",dR",
+			desc = "󰅪 Rename",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",dS",
+			"<CMD>Telescope treesitter<CR>",
+			desc = "󰅪 Treesitter symbols",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",dW",
+			"<CMD>Telescope lsp_dynamic_workspace_symbols<CR>",
+			desc = "󰅪 Dynamic Workspace symbols",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",da",
+			"<CMD>lua vim.lsp.buf.code_action()<CR>",
+			desc = "󰅪 Code actions",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",dd",
+			"<CMD>Telescope lsp_definitions<CR>",
+			desc = "󰅪 Go To Definition",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",df",
+			"<CMD>lua require('conform').format()<CR>",
+			desc = "󰅪 Format document",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",di",
+			"<CMD>Telescope lsp_implementations<CR>",
+			desc = "󰅪 Go To Implementation",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",dj",
+			"<CMD>lua vim.diagnostic.goto_next()<CR>",
+			desc = "󰅪 Go to next diagnostic",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",dk",
+			"<CMD>lua vim.diagnostic.goto_prev()<CR>",
+			desc = "󰅪 Go to previous diagnostic",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",dl",
+			"<CMD>Telescope diagnostics<CR>",
+			desc = "󰅪 List of diagnostics",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",dr",
+			"<CMD>Telescope lsp_references<CR>",
+			desc = "󰅪 Go to references",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",ds",
+			"<CMD>Telescope lsp_document_symbols<CR>",
+			desc = "󰅪 Document symbols",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",dt",
+			"<CMD>Telescope lsp_type_definitions<CR>",
+			desc = "󰅪 Type Definition",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",dw",
+			"<CMD>Telescope lsp_workspace_symbols<CR>",
+			desc = "󰅪 Workspace symbols",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",e",
+			"<CMD>Neotree focus<CR>",
+			desc = " NeoTree focus",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",g",
+			group = " GIT",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",g?",
+			"<CMD>Gitsigns preview_hunk_inline<CR>",
+			desc = " Git: Show preview for hunk",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",gC",
+			"<CMD>Telescope git_bcommits<CR>",
+			desc = " Git: Buffer's [c]commits",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",gD",
+			"<CMD>Gitsigns diffthis<CR>",
+			desc = " Git: Show diff this",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",gH",
+			"<CMD>Gitsigns toggle_linehl<CR>",
+			desc = " Git: Toggle line highliting",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",gR",
+			"<CMD>Gitsigns reset_buffer<CR>",
+			desc = " Git: Reset buffer status",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",gS",
+			"<CMD>Telescope git_stash<CR>",
+			desc = " Git: Show [S]tash",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",gY",
+			"<CMD>GitLink!<CR>",
+			desc = " Git: Open permalink in browser",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",g[",
+			"<CMD>Gitsigns prev_hunk<CR>",
+			desc = " Git: Previous hunk",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",g]",
+			"<CMD>Gitsigns next_hunk<CR>",
+			desc = " Git: Next hunk",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",ga",
+			"<CMD>Gitsigns stage_buffer<CR>",
+			desc = " Git: Stage buffer",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",gb",
+			"<CMD>Telescope git_branches<CR>",
+			desc = " Git: [b]ranches",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",gc",
+			"<CMD>Telescope git_commits<CR>",
+			desc = " Git: [c]commits",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",gd",
+			"<CMD>DiffviewOpen<CR>",
+			desc = " Git: Diffview",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",gf",
+			"<CMD>Telescope git_files<CR>",
+			desc = " Git: find [f]iles",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",gg",
+			"<CMD>Neogit<CR>",
+			desc = " NeoGit",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",gh",
+			"<CMD>Gitsigns toggle_deleted<CR>",
+			desc = " Git: Toggle deleted lines",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",gl",
+			"<CMD>DiffviewFileHistory<CR>",
+			desc = " Git: Show Diffview File History",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",gr",
+			"<CMD>Gitsigns reset_hunk<CR>",
+			desc = " Git: Reset hunk",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",gs",
+			"<CMD>Telescope git_status<CR>",
+			desc = " Git: Show [s]tatus",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",gw",
+			"<CMD>Gitsigns toggle_current_line_blame<CR>",
+			desc = " Git: toggle current line blame",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",gy",
+			"<CMD>GitLink<CR>",
+			desc = " Git: Copy permalink to keyboard",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",m",
+			group = "  Marks",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",ml",
+			"<CMD>Telescope marks<CR>",
+			desc = " List marks",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",n",
+			"<CMD>set hlsearch!<CR>",
+			desc = " Toggle hlsearch",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",t",
+			group = "  NeoTree: Left Sidebar",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",tb",
+			"<CMD>Neotree buffers left<CR>",
+			desc = " Buffers",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",tf",
+			"<CMD>Neotree focus left<CR>",
+			desc = " Focus",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",tg",
+			"<CMD>Neotree git_status left<CR>",
+			desc = " Git status",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",tr",
+			"<CMD>Neotree reveal left<CR>",
+			desc = " Reveal",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",tt",
+			"<CMD>Neotree toggle left<CR>",
+			desc = " Toggle",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",z",
+			group = " 󰰶 ZEN mode",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",za",
+			"<CMD>TZAtaraxis<CR>",
+			desc = "󰰶 Zen: Ataraxis mode",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",zd",
+			"<CMD>Twilight<CR>",
+			desc = "󰰶 Twilight: Dim code block",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",zf",
+			"<CMD>TZFocus<CR>",
+			desc = "󰰶 Zen: Focus mode",
+			nowait = true,
+			remap = false,
+		},
+		-- COMMA VISUAL
+		{
+			",z",
+			group = " 󰰶 ZEN mode",
+			mode = "v",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",zn",
+			"<CMD>'<,'>TZNarrow<CR>",
+			desc = "󰰶 Zen: Narrow mode",
+			mode = "v",
+			nowait = true,
+			remap = false,
+		},
+		-- BACKSLASH
+		{
+			"\\D",
+			"<CMD>bdelete<CR>",
+			desc = " Close buffer",
+			nowait = true,
+			remap = false,
+			mode = { "n", "v" },
+		},
+		{
+			"\\q",
+			"<CMD>qa!<CR>",
+			desc = " Force Quit",
+			nowait = true,
+			remap = false,
+			mode = { "n", "v" },
+		},
+		{
+			"<leader>t",
+			group = "Terminal",
+			desc = "  Terminal",
+			nowait = true,
+			remap = false,
+			mode = { "n", "v" },
+		},
+		{
+			"\\tf",
+			"<cmd>lua require('core.utils').ext_terminal('buffer')<CR>",
+			desc = " Open terminal tab in buffer directory",
+			nowait = true,
+			remap = false,
+			mode = { "n", "v" },
+		},
+		{
+			"\\ts",
+			"<cmd>lua require('core.utils').ext_terminal('buffer', 'window')<CR>",
+			desc = " Open terminal split in buffer directory",
+			nowait = true,
+			remap = false,
+			mode = { "n", "v" },
+		},
+		{
+			"\\tt",
+			"<cmd>lua require('core.utils').ext_terminal()<CR>",
+			desc = " Open terminal tab in current root directory",
+			nowait = true,
+			remap = false,
+			mode = { "n", "v" },
+		},
+		{
+			"\\tw",
+			"<cmd>lua require('core.utils').ext_terminal(nil, 'window')<CR>",
+			desc = " Open terminal split in root directory",
+			nowait = true,
+			remap = false,
+			mode = { "n", "v" },
 		},
 	},
 }
