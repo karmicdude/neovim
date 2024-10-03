@@ -32,6 +32,55 @@ return {
 		-- NORMAL
 		----- tabs
 		{
+			"<C-\\>",
+			"<CMD>vsplit<CR>",
+			desc = "󰖯 Split: Vertically",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<C-->",
+			"<CMD>split<CR>",
+			desc = "󰖯 Split: Horisontally",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<C-l>",
+			"<CMD>tabnext<CR>",
+			desc = "󰖯 Tab: Next",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<C-S-r>",
+			utils.rename_tab,
+			desc = "󰖯 Tab: Rename",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<C-CR>",
+			"<CMD>tabnew<CR>",
+			desc = "󰖯 Tab: New",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<C-S-BS>",
+			"<CMD>tabclose<CR>",
+			desc = "󰖯 Tab: Close",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"<C-h>",
+			"<CMD>tabprevious<CR>",
+			desc = "󰖯 Tab: Previous",
+			nowait = true,
+			remap = false,
+		},
+		{
 			"<C-l>",
 			"<CMD>tabnext<CR>",
 			desc = "󰖯 Tab: Next",
@@ -755,7 +804,7 @@ return {
 			mode = { "n", "v" },
 		},
 		{
-			"<leader>t",
+			"\\t",
 			group = "Terminal",
 			desc = "  Terminal",
 			nowait = true,
