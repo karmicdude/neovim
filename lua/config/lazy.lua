@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 local opts = {
 	defaults = { lazy = true },
 	checker = { enable = true },
+	rocks = { enabled = false },
 	install = {
 		colorscheme = { "catppuccin", "habamax" },
 		missing = true,
