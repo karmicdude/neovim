@@ -26,6 +26,7 @@ local lsp_config = {
 		"taplo",
 		"terraformls",
 		"tflint",
+		"ts_ls",
 		"vimls",
 		"yamlls",
 	},
