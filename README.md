@@ -10,7 +10,6 @@
 - [`bash-language-server`]
 - [`docker-compose-language-service`]
 - [`dockerfile-language-server`]
-- [`efm`]
 - [`eslint-lsp`]
 - [`gopls`]
 - [`helm-ls`]
