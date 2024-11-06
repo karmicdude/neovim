@@ -195,6 +195,7 @@ return {
 					"thumbs.db",
 					".git",
 					"node_modules",
+					"__pycache__",
 				},
 				never_show_by_pattern = {
 					--".null-ls_*",
