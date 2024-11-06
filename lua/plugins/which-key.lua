@@ -94,6 +94,13 @@ return {
 			nowait = true,
 			remap = false,
 		},
+		{
+			"<C-/>",
+			"<Plug>(comment_toggle_linewise_current)",
+			desc = " Comment line",
+			nowait = true,
+			remap = false,
+		},
 		----- wins
 		{
 			"<C-j>",
@@ -595,6 +602,13 @@ return {
 			",g]",
 			"<CMD>Gitsigns next_hunk<CR>",
 			desc = " Git: Next hunk",
+			nowait = true,
+			remap = false,
+		},
+		{
+			",gA",
+			"<CMD>Gitsigns stage_hunk<CR>",
+			desc = " Git: Stage hunk",
 			nowait = true,
 			remap = false,
 		},
