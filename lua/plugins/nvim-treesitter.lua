@@ -30,6 +30,7 @@ local opts = {
 		"make",
 		"markdown",
 		"markdown_inline",
+		"vrl",
 		"mermaid",
 		"passwd",
 		"promql",
@@ -57,13 +58,9 @@ local opts = {
 		enable = true,
 		keymaps = {
 			init_selection = "gnn",
-			node_decremental = "grm",
+			node_decremental = "<BS>",
 			node_incremental = "grn",
 			scope_incremental = "grc",
-			-- init_selection = "<C-s>",
-			-- node_incremental = "<C-s>",
-			-- scope_incremental = false,
-			-- node_decremental = "<BS>",
 		},
 	},
 	indent = {
