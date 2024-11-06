@@ -24,6 +24,16 @@ local config = function()
 		-- end
 	end
 
+	-- Terraform
+	lspconfig.terraformls.setup({
+		capabilities = caps,
+		on_attach = on_attach,
+		filetypes = {
+			"tf",
+			"terraform",
+		},
+	})
+
 	-- Lua
 	lspconfig.lua_ls.setup({
 		capabilities = caps,
