@@ -27,6 +27,8 @@ return {
 			fzf_lua = false,
 		},
 		mappings = {
+			commit_editor_I = {},
+			rebase_editor_I = {},
 			commit_editor = {
 				["q"] = "Close",
 				["<c-c><c-c>"] = "Submit",
