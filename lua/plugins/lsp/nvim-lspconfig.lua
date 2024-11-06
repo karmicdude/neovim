@@ -3,7 +3,7 @@ local config = function()
 	local cmp_nvim_lsp = require("cmp_nvim_lsp")
 	-- local root_pattern = require("lspconfig.util").root_pattern
 
-	local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+	local signs = { Error = "󱈸", Warn = "", Hint = "", Info = "" }
 	for type, icon in pairs(signs) do
 		local hl = "DiagnosticSign" .. type
 		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
@@ -48,8 +48,13 @@ local config = function()
 		},
 	})
 
-	-- TypeScript
+	-- TypeScript / JavaScript
 	lspconfig.ts_ls.setup({
+		capabilities = caps,
+		on_attach = on_attach,
+	})
+
+	lspconfig.eslint.setup({
 		capabilities = caps,
 		on_attach = on_attach,
 	})

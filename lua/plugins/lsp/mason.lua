@@ -15,6 +15,7 @@ local lsp_config = {
 		"bashls",
 		"docker_compose_language_service",
 		"dockerls",
+		"eslint",
 		"gopls",
 		"helm_ls",
 		"jqls",

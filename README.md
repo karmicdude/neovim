@@ -4,6 +4,47 @@
 
 - [catppuccin] - Soothing pastel theme for Neovim
 
+## LSP
+
+- [`ansible-language-server`]
+- [`bash-language-server`]
+- [`docker-compose-language-service`]
+- [`dockerfile-language-server`]
+- [`efm`]
+- [`eslint-lsp`]
+- [`gopls`]
+- [`helm-ls`]
+- [`jq-lsp`]
+- [`json-lsp`]
+- [`jsonnet-language-server`]
+- [`lua-language-server`]
+- [`marksman`]
+- [`pyright`]
+- [`sqlls`]
+- [`taplo`]
+- [`terraform-ls`]
+- [`tflint`]
+- [`typescript-language-server`]
+- [`vim-language-server`]
+- [`yaml-language-server`]
+
+## Linters
+
+- [`actionlint`]
+- [`ansible-lint`]
+- [`codespell`]
+- [`commitlint`]
+- [`cspell`]
+- [`editorconfig-checker`]
+- [`gitlint`]
+- [`jsonlint`]
+- [`luacheck`]
+- [`markdownlint`]
+- [`rstcheck`]
+- [`shellcheck`]
+- [`tflint`]
+- [`yamllint`]
+
 ## Plugins
 
 - [lazy.nvim] - A modern plugin manager for Neovim
@@ -70,6 +111,7 @@
 - [url-open] - Open URL under cursor in Neovim without netrw with default browser
 - [obsidian.nvim] - [Obsidian](https://obsidian.md) integration for Neovim
 
+<!-- prettier-ignore-start -->
 <!-- LINKS -->
 
 [lazy.nvim]: https://github.com/folke/lazy.nvim
@@ -136,3 +178,43 @@
 [copilot-cmp]: https://github.com/zbirenbaum/copilot-cmp
 [copilot.vim]: https://github.com/github/copilot.vim
 [obsidian.nvim]: https://github.com/epwalsh/obsidian.nvim
+
+<!-- LSP -->
+[`ansible-language-server`]: https://ansible.readthedocs.io/projects/vscode-ansible/als/
+[`bash-language-server`]: https://github.com/bash-lsp/bash-language-server
+[`docker-compose-language-service`]: https://github.com/microsoft/compose-language-service
+[`dockerfile-language-server`]: https://github.com/rcjsuen/dockerfile-language-server
+[`eslint-lsp`]: https://github.com/danielpza/eslint-lsp
+[`gopls`]: https://pkg.go.dev/golang.org/x/tools/gopls#section-readme
+[`helm-ls`]: https://github.com/mrjosh/helm-ls
+[`jq-lsp`]: https://github.com/wader/jq-lsp
+[`json-lsp`]: https://github.com/microsoft/vscode-json-languageservice
+[`jsonnet-language-server`]: https://github.com/grafana/jsonnet-language-server
+[`lua-language-server`]: https://github.com/LuaLS/lua-language-server
+[`marksman`]: https://github.com/artempyanykh/marksman
+[`pyright`]: https://github.com/emacs-lsp/lsp-pyright
+[`sqlls`]: https://github.com/joe-re/sql-language-server
+[`taplo`]: https://github.com/tamasfe/taplo
+[`terraform-ls`]: https://github.com/hashicorp/terraform-ls
+[`tflint`]: https://github.com/terraform-linters/tflint
+[`typescript-language-server`]: https://github.com/typescript-language-server/typescript-language-server
+[`vim-language-server`]: https://github.com/iamcco/vim-language-server
+[`yaml-language-server`]: https://github.com/redhat-developer/yaml-language-server
+
+<!-- LINTERS -->
+
+[`actionlint`]: https://github.com/rhysd/actionlint
+[`ansible-lint`]: https://github.com/ansible/ansible-lint
+[`codespell`]: https://github.com/codespell-project/codespell
+[`commitlint`]: https://commitlint.js.org/
+[`cspell`]: https://github.com/streetsidesoftware/cspell
+[`editorconfig-checker`]: https://github.com/editorconfig-checker/editorconfig-checker
+[`gitlint`]: https://github.com/jorisroovers/gitlint
+[`jsonlint`]: https://github.com/zaach/jsonlint
+[`luacheck`]: https://github.com/mpeterv/luacheck
+[`markdownlint`]: https://github.com/DavidAnson/markdownlint
+[`rstcheck`]: https://github.com/rstcheck/rstcheck
+[`shellcheck`]: https://www.shellcheck.net/
+[`yamllint`]: https://github.com/adrienverge/yamllint
+
+<!-- prettier-ignore-end -->
