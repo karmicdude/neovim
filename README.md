@@ -56,7 +56,7 @@
 - [stay-in-place.nvim] - Neovim plugin that prevent cursor from moving (shift and filter actions)
 - [scrollEOF.nvim] - Scroll past the end of file just like scrolloff option
 - [comment.nvim] - Smart and powerful comment plugin for Neovim
-- [twilight.nvim] - Dims inactive portions of the code you're editing using TreeSitter
+- [twilight.nvim] - Dims inactive portions of the code you're editing using Treesitter
 - [true-zen.nvim] - Clean and elegant distraction-free writing for Neovim
 - [neodev.nvim] - Neovim setup for init.lua and plugin development
 - [mason.nvim] - Easily install and manage LSP servers, DAP servers, linters, and formatter
@@ -68,6 +68,7 @@
 - [which-key.nvim] - Displays a pop-up with possible key bindings of the command you started typing
 - [inc-rename.nvim] - Incremental LSP renaming
 - [url-open] - Open URL under cursor in Neovim without netrw with default browser
+- [obsidian.nvim] - [Obsidian](https://obsidian.md) integration for Neovim
 
 <!-- LINKS -->
 
@@ -134,3 +135,4 @@
 [url-open]: https://github.com/sontungexpt/url-open
 [copilot-cmp]: https://github.com/zbirenbaum/copilot-cmp
 [copilot.vim]: https://github.com/github/copilot.vim
+[obsidian.nvim]: https://github.com/epwalsh/obsidian.nvim
