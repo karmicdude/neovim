@@ -64,8 +64,8 @@ local config = function()
 		},
 		root_dir = function(fname)
 			return lspconfig.util.root_pattern({
-				".ansible-lint",
 				".ansible-lint.yaml",
+				".ansible-lint",
 				".ansible-lint.yml",
 				".yamllint.yaml",
 				".yamllint.yml",
@@ -76,18 +76,15 @@ local config = function()
 		single_file_support = true,
 		settings = {
 			ansible = {
+				ansibleLint = {
+					enabled = true,
+					path = "~/.pyenv/shims/ansible-lint",
+				},
 				ansible = {
 					useFullyQualifiedCollectionNames = true,
 				},
 				python = {
 					interpreterPath = "~/.pyenv/shims/ansible",
-				},
-				validation = {
-					enabled = true,
-					lint = {
-						enabled = true,
-						path = "~/.pyenv/shims/ansible-lint",
-					},
 				},
 			},
 		},
