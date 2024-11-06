@@ -28,6 +28,7 @@
 - [tabby.nvim] - A declarative, highly configurable, and Neovim style tabline plugin
 - [gitsigns.nvim] - Git integration for buffers
 - [gitlinker.nvim] - Generates shareable file permalinks to Git web services
+- [copilot.vim] - Neovim plugin for GitHub Copilot
 - [neogit] - An interactive and powerful Git interface for Neovim
 - [diffview.nvim] - A Git diff manager
 - [todo-comments.nvim] - Highlight, list and search todo comments in your projects
@@ -42,6 +43,7 @@
 - [cmp-rg] - `ripgrep` source for [nvim-cmp]
 - [cmp-luasnip] - [luasnip] completion source for [nvim-cmp]
 - [cmp-fish] - `fish` shell completion for [nvim-cmp]
+- [copilot-cmp] - A plugin to turn GitHub Copilot into source for [nvim-cmp]
 - [luasnip] - Snippet engine for Neovim written in Lua
 - [lspkind.nvim] - VSCode-like pictograms for Neovim built-in LSP
 - [flash.nvim] - Navigate your code with search labels, enhanced character motions
@@ -66,6 +68,8 @@
 - [which-key.nvim] - Displays a pop-up with possible key bindings of the command you started typing
 - [inc-rename.nvim] - Incremental LSP renaming
 - [url-open] - Open URL under cursor in Neovim without netrw with default browser
+
+<!-- LINKS -->
 
 [lazy.nvim]: https://github.com/folke/lazy.nvim
 [barbecue.nvim]: https://github.com/utilyre/barbecue.nvim
@@ -128,3 +132,5 @@
 [inc-rename.nvim]: https://github.com/smjonas/inc-rename.nvim
 [hlargs.nvim]: https://github.com/m-demare/hlargs.nvim
 [url-open]: https://github.com/sontungexpt/url-open
+[copilot-cmp]: https://github.com/zbirenbaum/copilot-cmp
+[copilot.vim]: https://github.com/github/copilot.vim

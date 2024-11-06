@@ -12,6 +12,7 @@ return {
 		vim.api.nvim_set_hl(0, "ModesDelete", { bg = "#f38ba8" })
 		vim.api.nvim_set_hl(0, "ModesInsert", { bg = "#334d54" })
 		vim.api.nvim_set_hl(0, "ModesVisual", { bg = "#b4befe" })
+		vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
 	end,
 	opts = {
 		flavour = "mocha",
