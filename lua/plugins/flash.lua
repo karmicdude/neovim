@@ -16,6 +16,9 @@ return {
 				"NeogitStatus",
 			},
 		},
+		char = {
+			enabled = false,
+		},
 	},
   -- stylua: ignore
 	keys = {
