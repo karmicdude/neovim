@@ -183,6 +183,14 @@ return {
 			remap = false,
 			mode = { "x" },
 		},
+		{
+			"gs",
+			":'<,'>!sort<CR>",
+			desc = "󰒺 Sort lines",
+			nowait = true,
+			remap = false,
+			mode = "v",
+		},
 		-- INSERT
 		{
 			"<C-S-i>",
@@ -191,6 +199,14 @@ return {
 			mode = "i",
 			nowait = true,
 			remap = false,
+		},
+		{
+			"<C-/>",
+			"<ESC><Plug>(comment_toggle_linewise_current)",
+			desc = " Comment line",
+			nowait = true,
+			remap = false,
+			mode = "i",
 		},
 		-- LEADER -----------------------------
 		{
