@@ -14,7 +14,7 @@ return {
 			["jsonnet"] = { "jsonnetfmt" },
 			["less"] = { "prettierd", "prettier", stop_after_first = true },
 			["lua"] = { "stylua" },
-			["markdown"] = { "prettier", stop_after_first = true },
+			["markdown"] = { "prettierd", stop_after_first = true },
 			["scss"] = { "prettierd", "prettier", stop_after_first = true },
 			["sh"] = { "shfmt" },
 			["bash"] = { "shfmt" },
@@ -31,7 +31,7 @@ return {
 			["hcl"] = { "packer_fmt" },
 		},
 		format_on_save = function(bufnr)
-			local timeout = vim.b[bufnr].format_timeout or 400
+			local timeout = vim.b[bufnr].format_timeout or 800
 			return {
 				timeout_ms = timeout,
 				lsp_fallback = true,
