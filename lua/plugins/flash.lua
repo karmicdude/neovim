@@ -6,8 +6,24 @@ return {
 			search = {
 				enabled = false,
 			},
+			char = {
+				enabled = true,
+				multi_line = true,
+				autohide = false,
+				highlight = { backdrop = true },
+				keys = { "t", "T", "f", "F", [";"] = "L", [","] = "H" },
+				char_actions = function(motion)
+					return {
+						[motion:upper()] = "left",
+						[motion:lower()] = "right",
+						[","] = "left",
+						[";"] = "right",
+					}
+				end,
+			},
 		},
 		search = {
+			mode = "fuzzy",
 			exclude = {
 				"notify",
 				"cmp_menu",
@@ -16,8 +32,15 @@ return {
 				"NeogitStatus",
 			},
 		},
-		char = {
-			enabled = false,
+		label = {
+			min_pattern_length = 2,
+			rainbow = {
+				enabled = true,
+				shade = 5,
+			},
+		},
+		highlight = {
+			backdrop = true,
 		},
 	},
   -- stylua: ignore
