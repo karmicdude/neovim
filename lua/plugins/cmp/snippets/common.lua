@@ -1,14 +1,19 @@
 local ls = require("luasnip")
 local s = ls.snippet
 local i = ls.insert_node
+local f = ls.function_node
+local t = ls.text_node
 local fmt = require("luasnip.extras.fmt").fmt
--- local extras = require("luasnip.extras")
--- local rep = extras.rep
--- local t = ls.text_node
--- local c = ls.choice_node
--- local f = ls.function_node
--- local d = ls.dynamic_node
--- local sn = ls.snippet_node
+
+function _G.expand_snippet_by_name(trigger, filetype)
+	local snippets = require("luasnip").get_snippets(filetype)
+	for _, snip in ipairs(snippets) do
+		if snip.trigger == trigger then
+			require("luasnip").snip_expand(snip)
+			return
+		end
+	end
+end
 
 ls.add_snippets("all", {
 	s(
@@ -25,3 +30,31 @@ ls.add_snippets("all", {
 		)
 	),
 })
+
+ls.add_snippets("javascript", {
+	s("clog", {
+		t("console.log("),
+		f(function()
+			local yank = vim.fn.getreg('"')
+			if yank == nil then
+				return ""
+			end
+			yank = yank:gsub("^%s*(.-)%s*$", "%1") -- trim newline char
+			return yank
+		end),
+		t(");"),
+	}),
+})
+
+vim.api.nvim_set_keymap(
+	"i",
+	"<C-S>cl",
+	"<CMD>lua expand_snippet_by_name('clog', 'javascript')<CR>",
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"<C-S>cl",
+	"<CMD>lua expand_snippet_by_name('clog', 'javascript')<CR>",
+	{ noremap = true, silent = true }
+)
