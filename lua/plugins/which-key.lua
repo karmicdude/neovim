@@ -1,3 +1,5 @@
+-- TODO: вытащить иконки в `rules`
+-- https://github.com/folke/which-key.nvim/blob/main/lua/which-key/icons.lua
 local utils = require("core.utils")
 
 return {
@@ -24,6 +26,9 @@ return {
 		},
 		win = {
 			border = "single",
+		},
+		icons = {
+			mappings = false,
 		},
 	},
 	show_help = true,
@@ -272,6 +277,22 @@ return {
 			nowait = true,
 			remap = false,
 		},
+		-- Snippets
+		{
+			"<leader>s",
+			group = " Snippets",
+			nowait = true,
+			remap = true,
+			mode = "n",
+		},
+		{
+			"<leader>scl",
+			"<CMD>lua expand_snippet_by_name('clog', 'javascript')<CR>",
+			desc = " Wrap yank with console.log()",
+			nowait = true,
+			remap = true,
+		},
+		-- Helpers
 		{
 			"<leader>h",
 			group = "  Helpers",

@@ -45,16 +45,3 @@ ls.add_snippets("javascript", {
 		t(");"),
 	}),
 })
-
-vim.api.nvim_set_keymap(
-	"i",
-	"<C-S>cl",
-	"<CMD>lua expand_snippet_by_name('clog', 'javascript')<CR>",
-	{ noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-	"n",
-	"<C-S>cl",
-	"<CMD>lua expand_snippet_by_name('clog', 'javascript')<CR>",
-	{ noremap = true, silent = true }
-)
