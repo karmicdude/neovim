@@ -148,7 +148,8 @@ return {
 					["[g"] = "prev_git_modified",
 					["]g"] = "next_git_modified",
 					["i"] = "show_file_details",
-					["o"] = { "show_help", nowait = false, config = { title = "Order by", prefix_key = "o" } },
+					["o"] = "system_open",
+					["?"] = { "show_help", nowait = false, config = { title = "Order by", prefix_key = "o" } },
 					["oc"] = { "order_by_created", nowait = false },
 					["od"] = { "order_by_diagnostics", nowait = false },
 					["og"] = { "order_by_git_status", nowait = false },
@@ -253,6 +254,13 @@ return {
 					["ot"] = { "order_by_type", nowait = false },
 				},
 			},
+		},
+		commands = {
+			system_open = function(state)
+				local node = state.tree:get_node()
+				local path = node:get_id()
+				vim.fn.jobstart({ "open", path }, { detach = true })
+			end,
 		},
 	},
 }
