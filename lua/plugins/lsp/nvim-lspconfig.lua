@@ -48,6 +48,40 @@ local config = function()
 		},
 	})
 
+	-- Python
+
+	require("lspconfig").pylsp.setup({
+		capabilities = caps,
+		on_attach = on_attach,
+		settings = {
+			pylsp = {
+				plugins = {
+					pycodestyle = {
+						ignore = { "W391" },
+						maxLineLength = 100,
+					},
+					jedi_completion = {
+						fuzzy = true,
+						eager = true,
+					},
+					pydocstyle = {
+						enabled = true,
+						convention = "pep257",
+					},
+					pyflakes = {
+						enabled = true,
+					},
+					rope_autoimport = {
+						enabled = true,
+					},
+					rope_completion = {
+						enabled = true,
+					},
+				},
+			},
+		},
+	})
+
 	-- TypeScript / JavaScript
 	lspconfig.ts_ls.setup({
 		capabilities = caps,

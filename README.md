@@ -18,6 +18,7 @@
 - [`jsonnet-language-server`]
 - [`lua-language-server`]
 - [`marksman`]
+- [`pylsp`]
 - [`pyright`]
 - [`sqlls`]
 - [`taplo`]
@@ -191,6 +192,7 @@
 [`jsonnet-language-server`]: https://github.com/grafana/jsonnet-language-server
 [`lua-language-server`]: https://github.com/LuaLS/lua-language-server
 [`marksman`]: https://github.com/artempyanykh/marksman
+[`pylsp`]: https://github.com/python-lsp/python-lsp-server
 [`pyright`]: https://github.com/emacs-lsp/lsp-pyright
 [`sqlls`]: https://github.com/joe-re/sql-language-server
 [`taplo`]: https://github.com/tamasfe/taplo

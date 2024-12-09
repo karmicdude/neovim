@@ -22,6 +22,7 @@ local lsp_config = {
 		"jsonls",
 		"jsonnet_ls",
 		"lua_ls",
+		"pylsp",
 		"pyright",
 		"sqlls",
 		"taplo",
