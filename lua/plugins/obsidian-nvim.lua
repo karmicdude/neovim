@@ -12,9 +12,22 @@ return {
 	},
 	opts = {
 		preferred_link_style = "markdown",
+		markdown_link_func = function(opts)
+			-- Make spaces url-encoded for Obsidian compatibility
+			opts.path = string.gsub(opts.path, "%s", "%%20")
+			return string.format("[%s](%s)", opts.label, opts.path)
+		end,
 		sort_by = "modified",
 		sort_reversed = true,
 		search_max_lines = 1000,
+
+		-- Create an original title, not a generated id
+		---@param spec { id: string, dir: obsidian.Path, title: string|? }
+		---@return string|obsidian.Path The full path to the new note.
+		note_path_func = function(spec)
+			local path = spec.dir / tostring(spec.title)
+			return path:with_suffix(".md")
+		end,
 
 		workspaces = {
 			{
@@ -60,7 +73,6 @@ return {
 			tags = { hl_group = "ObsidianTag" },
 			block_ids = { hl_group = "ObsidianBlockID" },
 			hl_groups = {
-				-- The options are passed directly to `vim.api.nvim_set_hl()`. See `:help nvim_set_hl`.
 				ObsidianTodo = { bold = true, fg = "#f78c6c" },
 				ObsidianDone = { bold = true, fg = "#89ddff" },
 				ObsidianRightArrow = { bold = true, fg = "#f78c6c" },
@@ -88,7 +100,6 @@ return {
 				end,
 				opts = { buffer = true },
 			},
-			-- Smart action depending on context, either follow link or toggle checkbox.
 			["<cr>"] = {
 				action = function()
 					return require("obsidian").util.smart_action()
@@ -96,7 +107,5 @@ return {
 				opts = { buffer = true, expr = true },
 			},
 		},
-
-		-- see below for full list of options 👇
 	},
 }
