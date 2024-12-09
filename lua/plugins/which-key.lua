@@ -1,5 +1,6 @@
--- TODO: вытащить иконки в `rules`
--- https://github.com/folke/which-key.nvim/blob/main/lua/which-key/icons.lua
+-- TODO:--
+-- - move icons to `rules`. see https://github.com/folke/which-key.nvim/blob/main/lua/which-key/icons.lua
+-- - rework keys with wk.add(), because current way can't doen't allow to flexibly set the name of groups
 local utils = require("core.utils")
 
 return {
@@ -11,6 +12,84 @@ return {
 	init = function()
 		vim.o.timeout = true
 		vim.o.timeoutlen = 700
+		local wk = require("which-key")
+		-- Obsidian
+		wk.add({
+			{ "<leader>o", group = " 󰧑 Obsidian" },
+			{
+				"<leader>ob",
+				"<CMD>ObsidianBacklinks<CR>",
+				desc = "󰿨 Open backlinks to current buffer",
+				nowait = true,
+				remap = false,
+			},
+			{
+				"<leader>of",
+				"<CMD>ObsidianSearch<CR>",
+				desc = " Search for (or create) notes",
+				nowait = true,
+				remap = false,
+			},
+			{
+				"<leader>oi",
+				"<CMD>ObsidianTOC<CR>",
+				desc = " Show TOC of current buffer",
+				nowait = true,
+				remap = false,
+			},
+			{
+				"<leader>ol",
+				"<CMD>ObsidianLinkNew<CR>",
+				desc = "󱄀 Create new link from selected text",
+				nowait = true,
+				remap = false,
+				mode = "v",
+			},
+			{
+				"<leader>oL",
+				"<CMD>ObsidianLinks<CR>",
+				desc = "󰿨 Show all links from current buffer",
+				nowait = true,
+				remap = false,
+			},
+			{
+				"<leader>oo",
+				"<CMD>ObsidianOpen<CR>",
+				desc = " Open current buffer in Obsidian",
+				nowait = true,
+				remap = false,
+			},
+			{
+				"<leader>or",
+				"<CMD>ObsidianRename<CR>",
+				desc = "󰑕 Rename current file",
+				nowait = true,
+				remap = false,
+			},
+			{
+				"<leader>os",
+				"<CMD>ObsidianFollowLink vsplit<CR>",
+				desc = " Open link in vertical split",
+				nowait = true,
+				remap = false,
+			},
+			{ "<leader>ot", "<CMD>ObsidianTags<CR>", desc = " List of Obsidian Tags", nowait = true, remap = false },
+			{
+				"<leader>oT",
+				"<CMD>ObsidianTemplate<CR>",
+				desc = " List of available templates",
+				nowait = true,
+				remap = false,
+			},
+			{
+				"<leader>ox",
+				"<CMD>ObsidianExtractNote<CR>",
+				desc = "󰎜 Extract selected text to new note",
+				nowait = true,
+				remap = false,
+				mode = "v",
+			},
+		})
 	end,
 	opts = {
 		notify = false,
@@ -33,6 +112,9 @@ return {
 	},
 	show_help = true,
 	show_keys = true,
+	icons = {
+		group = " ",
+	},
 	keys = {
 		-- NORMAL
 		----- tabs
@@ -147,6 +229,13 @@ return {
 			"<C-S-w>",
 			"<CMD>noautocmd w<CR>",
 			desc = " Save without autocmd",
+			nowait = true,
+			remap = false,
+		},
+		{
+			"gF",
+			"<CMD>vertical wincmd f<CR>",
+			desc = "󰖯 Follow link in vertical split",
 			nowait = true,
 			remap = false,
 		},
