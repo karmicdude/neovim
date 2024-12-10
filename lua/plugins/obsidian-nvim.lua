@@ -11,7 +11,7 @@ return {
 		"hrsh7th/nvim-cmp",
 	},
 	opts = {
-		preferred_link_style = "markdown",
+		preferred_link_style = "wikilinks",
 		markdown_link_func = function(opts)
 			-- Make spaces url-encoded for Obsidian compatibility
 			opts.path = string.gsub(opts.path, "%s", "%%20")
