@@ -53,6 +53,20 @@ return {
 				remap = false,
 			},
 			{
+				"<leader>on",
+				"<CMD>ObsidianNew<CR>",
+				desc = " New document",
+				nowait = true,
+				remap = false,
+			},
+			{
+				"<leader>oN",
+				"<CMD>ObsidianNewFromTemplate<CR>",
+				desc = " New document from template",
+				nowait = true,
+				remap = false,
+			},
+			{
 				"<leader>oo",
 				"<CMD>ObsidianOpen<CR>",
 				desc = " Open current buffer in Obsidian",
