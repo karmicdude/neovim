@@ -13,6 +13,32 @@ return {
 		vim.o.timeout = true
 		vim.o.timeoutlen = 700
 		local wk = require("which-key")
+		-- Some custom actions
+		wk.add({
+			{ "<leader>a", group = "  Actions" },
+			-- Ansible
+			{
+				"<leader>ad",
+				"<CMD>!ansible-vault decrypt %<CR>",
+				desc = "󰯭 Ansible Vault: Decrypt vault encrypted file",
+				nowait = true,
+				remap = false,
+			},
+			{
+				"<leader>ae",
+				"<CMD>!ansible-vault ecrypt %<CR>",
+				desc = "󰯭 Ansible Vault: Encrypt file with vault",
+				nowait = true,
+				remap = false,
+			},
+			{
+				"<leader>av",
+				"<CMD>AnsibleVaultView<CR>",
+				desc = "󰯭 Ansible Vault: View encrypted vault file",
+				nowait = true,
+				remap = false,
+			},
+		})
 		-- Obsidian
 		wk.add({
 			{ "<leader>o", group = " 󰧑 Obsidian" },

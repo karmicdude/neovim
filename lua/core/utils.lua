@@ -47,4 +47,29 @@ M.rename_tab = function()
 	end)
 end
 
+-- get LSP project root
+M.get_lsp_project_root = function()
+	local lsp_util = require("lspconfig.util")
+	local bufname = vim.api.nvim_buf_get_name(0)
+	local root = lsp_util.root_pattern("ansible.cfg")(bufname)
+	print(root)
+	return root
+end
+
+-- Create new buffer with content in new tab
+--@param name string Name for new buffer
+--@param buftype string Buffer type. See :h buftype
+--@param content string Text content for new buffer
+--@param filetype string Filetype for syntax highlight and other stuff
+M.create_buffer_in_new_tab = function(name, buftype, content, filetype)
+	vim.cmd("tabnew")
+	vim.cmd("enew")
+	vim.cmd("noautocmd")
+	local buf = vim.api.nvim_get_current_buf()
+	vim.api.nvim_buf_set_name(buf, name)
+	vim.api.nvim_buf_set_option(buf, "buftype", buftype)
+	vim.api.nvim_buf_set_lines(buf, 0, 1, true, content)
+	vim.api.nvim_buf_set_option(buf, "filetype", filetype)
+end
+
 return M
