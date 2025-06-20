@@ -61,3 +61,13 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 		vim.bo.filetype = "yaml.ansible"
 	end,
 })
+
+-- VRL
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = {
+		"*.vrl",
+	},
+	callback = function()
+		vim.bo.filetype = "vrl"
+	end,
+})

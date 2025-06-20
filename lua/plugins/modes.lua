@@ -7,6 +7,6 @@ return {
 		set_cursor = true,
 		set_cursorline = true,
 		set_number = false,
-		ignore_filetypes = { "neo-tree", "TelescopePrompt" },
+		ignore = { "neo-tree", "TelescopePrompt" },
 	},
 }

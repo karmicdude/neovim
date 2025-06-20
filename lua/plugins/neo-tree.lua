@@ -78,7 +78,7 @@ return {
 				["s"] = "open_vsplit",
 				["t"] = "open_tabnew",
 				["w"] = "open_with_window_picker",
-				["z"] = "close_node",
+				["C"] = { "close_node", nowait = true },
 				["Z"] = "close_all_nodes",
 				["e"] = "expand_all_nodes",
 				["E"] = "toggle_auto_expand_width",
