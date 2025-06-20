@@ -5,6 +5,7 @@ local global = {
 	loaded_netrwPlugin = 1,
 	editorconfig = true,
 	syntax = false,
+	python3_host_prog = vim.fn.expand("~/.pyenv/shims/python3"),
 }
 
 local options = {
