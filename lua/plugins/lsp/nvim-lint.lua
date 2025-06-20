@@ -23,6 +23,8 @@ return {
 			["markdown"] = { "markdownlint" },
 			["json"] = { "jsonlint" },
 			["jsonc"] = { "jsonlint" },
+			["javascript"] = { "eslint" },
+			["typescript"] = { "eslint" },
 		}
 		local actionlint_config = vim.fn.getcwd() .. "/.github/actionlint.yaml"
 		local f = io.open(actionlint_config, "r")
