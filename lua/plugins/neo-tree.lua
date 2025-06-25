@@ -95,44 +95,8 @@ return {
 				["?"] = "show_help",
 				["<"] = "prev_source",
 				[">"] = "next_source",
-				["Y"] = {
-					function(state)
-						local node = state.tree:get_node()
-						local filepath = node:get_id()
-						local filename = node.name
-						local modify = vim.fn.fnamemodify
-
-						local results = {
-							filepath,
-							modify(filepath, ":."),
-							modify(filepath, ":~"),
-							filename,
-							modify(filename, ":r"),
-							modify(filename, ":e"),
-						}
-
-						-- absolute path to clipboard
-						local i = vim.fn.inputlist({
-							"Choose to copy to clipboard:",
-							"1. Absolute path: " .. results[1],
-							"2. Path relative to CWD: " .. results[2],
-							"3. Path relative to HOME: " .. results[3],
-							"4. Filename: " .. results[4],
-							"5. Filename without extension: " .. results[5],
-							"6. Extension of the filename: " .. results[6],
-						})
-
-						if i > 0 then
-							local result = results[i]
-							if not result then
-								return print("Invalid choice: " .. i)
-							end
-							vim.fn.setreg("*", result)
-							vim.notify("Copied: " .. result)
-						end
-					end,
-					desc = "Copy path",
-				},
+				["Y"] = { "copy_path", desc = "Copy path" },
+				["B"] = { "go_to_parent", desc = "Jump to parent node" },
 			},
 		},
 		filesystem = {
@@ -263,6 +227,45 @@ return {
 				local node = state.tree:get_node()
 				local path = node:get_id()
 				vim.fn.jobstart({ "open", path }, { detach = true })
+			end,
+			go_to_parent = function(state)
+				local node = state.tree:get_node()
+				require("neo-tree.ui.renderer").focus_node(state, node:get_parent_id())
+			end,
+			copy_path = function(state)
+				local node = state.tree:get_node()
+				local filepath = node:get_id()
+				local filename = node.name
+				local modify = vim.fn.fnamemodify
+
+				local results = {
+					filepath,
+					modify(filepath, ":."),
+					modify(filepath, ":~"),
+					filename,
+					modify(filename, ":r"),
+					modify(filename, ":e"),
+				}
+
+				-- absolute path to clipboard
+				local i = vim.fn.inputlist({
+					"Choose to copy to clipboard:",
+					"1. Absolute path: " .. results[1],
+					"2. Path relative to CWD: " .. results[2],
+					"3. Path relative to HOME: " .. results[3],
+					"4. Filename: " .. results[4],
+					"5. Filename without extension: " .. results[5],
+					"6. Extension of the filename: " .. results[6],
+				})
+
+				if i > 0 then
+					local result = results[i]
+					if not result then
+						return print("Invalid choice: " .. i)
+					end
+					vim.fn.setreg("*", result)
+					vim.notify("Copied: " .. result)
+				end
 			end,
 		},
 	},
