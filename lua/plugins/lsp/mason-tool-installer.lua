@@ -10,7 +10,6 @@ local formatters = {
 
 local linters = {
 	"actionlint",
-	"ansible-lint",
 	"black",
 	"codespell",
 	"commitlint",
