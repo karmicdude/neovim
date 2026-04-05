@@ -3,7 +3,8 @@ return {
 	name = "catppuccin",
 	priority = 1000,
 	lazy = false,
-	init = function()
+	config = function(_, opts)
+		require("catppuccin").setup(opts)
 		vim.cmd.colorscheme("catppuccin")
 		vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { fg = "#505173" })
 		vim.api.nvim_set_hl(0, "VirtColumnColor", { fg = "#26253b" })

@@ -26,7 +26,7 @@ return {
 			},
 			{
 				"<leader>ae",
-				"<CMD>!ansible-vault ecrypt %<CR>",
+				"<CMD>!ansible-vault encrypt %<CR>",
 				desc = "󰯭 Ansible Vault: Encrypt file with vault",
 				nowait = true,
 				remap = false,

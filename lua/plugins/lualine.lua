@@ -3,12 +3,13 @@ return {
 	lazy = false,
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
+		"catppuccin/nvim",
 	},
-	init = function()
+	config = function()
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
-				theme = "catppuccin",
+				theme = "catppuccin-macchiato",
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = {

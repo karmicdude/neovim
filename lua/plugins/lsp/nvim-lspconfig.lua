@@ -1,7 +1,5 @@
 local config = function()
-	local lspconfig = require("lspconfig")
 	local cmp_nvim_lsp = require("cmp_nvim_lsp")
-	-- local root_pattern = require("lspconfig.util").root_pattern
 
 	vim.diagnostic.config({
 		signs = {
@@ -26,55 +24,46 @@ local config = function()
 		},
 	})
 
-	local caps = cmp_nvim_lsp.default_capabilities()
-
-	local on_attach = function(client, bufnr)
-		if client.server_capabilities.documentSymbolProvider then
-			require("nvim-navic").attach(client, bufnr)
-		end
-
-		if client:supports_method("textDocument/publishDiagnostic") then
-			local is_pull = false
-			local ns = vim.lsp.diagnostic.get_namespace(client.id, is_pull)
-
-			vim.diagnostic.config({
-				virtual_text = false,
-			}, ns)
-		end
-		-- -- For disable treesitter highlighting
-		-- if client.name == "lua_ls" then
-		--   client.server_capabilities.semanticTokensProvider = nil
-		-- end
-	end
-
-	-- Terraform
-	lspconfig.terraformls.setup({
-		capabilities = caps,
-		on_attach = on_attach,
-		filetypes = {
-			"tf",
-			"terraform",
-		},
+	vim.lsp.config("*", {
+		capabilities = cmp_nvim_lsp.default_capabilities(),
 	})
 
+	vim.api.nvim_create_autocmd("LspAttach", {
+		callback = function(args)
+			local client = vim.lsp.get_client_by_id(args.data.client_id)
+			local bufnr = args.buf
+
+			if client.server_capabilities.documentSymbolProvider then
+				require("nvim-navic").attach(client, bufnr)
+			end
+
+			if client:supports_method("textDocument/publishDiagnostic") then
+				local is_pull = false
+				local ns = vim.lsp.diagnostic.get_namespace(client.id, is_pull)
+				vim.diagnostic.config({ virtual_text = false }, ns)
+			end
+		end,
+	})
+
+	-- Terraform
+	vim.lsp.config("terraformls", {
+		filetypes = { "terraform", "tf" },
+	})
+	vim.lsp.enable("terraformls")
+
 	-- Lua
-	lspconfig.lua_ls.setup({
-		capabilities = caps,
-		on_attach = on_attach,
+	vim.lsp.config("lua_ls", {
 		settings = {
 			Lua = {
-				completion = {
-					callSnippet = "Replace",
-				},
+				completion = { callSnippet = "Replace" },
 				diagnostics = { globals = { "vim" } },
 			},
 		},
 	})
+	vim.lsp.enable("lua_ls")
 
 	-- Python
-	require("lspconfig").pylsp.setup({
-		capabilities = caps,
-		on_attach = on_attach,
+	vim.lsp.config("pylsp", {
 		settings = {
 			pylsp = {
 				plugins = {
@@ -90,38 +79,27 @@ local config = function()
 						enabled = true,
 						convention = "pep257",
 					},
-					pyflakes = {
-						enabled = true,
-					},
-					rope_autoimport = {
-						enabled = true,
-					},
-					rope_completion = {
-						enabled = true,
-					},
+					pyflakes = { enabled = true },
+					rope_autoimport = { enabled = true },
+					rope_completion = { enabled = true },
 				},
 			},
 		},
 	})
+	vim.lsp.enable("pylsp")
 
 	-- TypeScript / JavaScript
-	lspconfig.ts_ls.setup({
-		capabilities = caps,
-		on_attach = on_attach,
+	vim.lsp.config("ts_ls", {
 		init_options = {
-			preferences = {
-				disableSuggestions = true,
-			},
+			preferences = { disableSuggestions = true },
 		},
 	})
+	vim.lsp.enable("ts_ls")
 
-	lspconfig.eslint.setup({
-		capabilities = caps,
-		on_attach = on_attach,
-		root_dir = function(fname)
-			return lspconfig.util.root_pattern({
-				".vimroot",
-			})(fname)
+	-- ESLint
+	vim.lsp.config("eslint", {
+		root_dir = function(bufnr)
+			return vim.fs.root(bufnr, { ".vimroot" })
 		end,
 		settings = {
 			codeAction = {
@@ -129,44 +107,32 @@ local config = function()
 					enable = true,
 					location = "separateLine",
 				},
-				showDocumentation = {
-					enable = true,
-				},
+				showDocumentation = { enable = true },
 			},
 			codeActionOnSave = {
 				enable = false,
 				mode = "all",
 			},
-			experimental = {
-				useFlatConfig = false,
-			},
+			experimental = { useFlatConfig = false },
 			format = true,
 			nodePath = "",
 			onIgnoredFiles = "off",
-			problems = {
-				shortenToSingleLine = false,
-			},
+			problems = { shortenToSingleLine = false },
 			quiet = false,
 			rulesCustomizations = {},
 			run = "onType",
 			useESLintClass = false,
 			validate = "on",
-			workingDirectory = {
-				mode = "location",
-			},
+			workingDirectory = { mode = "location" },
 		},
 	})
+	vim.lsp.enable("eslint")
 
-	-- Ansilbe
-	lspconfig.ansiblels.setup({
-		capabilities = caps,
-		on_attach = on_attach,
-		filetypes = {
-			"yaml.ansible",
-			"ansible",
-		},
-		root_dir = function(fname)
-			return lspconfig.util.root_pattern({
+	-- Ansible
+	vim.lsp.config("ansiblels", {
+		filetypes = { "yaml.ansible", "ansible" },
+		root_dir = function(bufnr)
+			return vim.fs.root(bufnr, {
 				"ansible.cfg",
 				".ansible-lint.yaml",
 				".ansible-lint",
@@ -175,17 +141,13 @@ local config = function()
 				".yamllint.yml",
 				"requirements.yaml",
 				"inventory.ini",
-			})(fname)
+			})
 		end,
 		single_file_support = true,
 		settings = {
 			ansible = {
-				ansible = {
-					useFullyQualifiedCollectionNames = true,
-				},
-				python = {
-					interpreterPath = "~/.pyenv/shims/ansible",
-				},
+				ansible = { useFullyQualifiedCollectionNames = true },
+				python = { interpreterPath = "~/.pyenv/shims/ansible" },
 				validation = {
 					enabled = true,
 					lint = {
@@ -196,13 +158,17 @@ local config = function()
 			},
 		},
 	})
+	vim.lsp.enable("ansiblels")
 
 	-- Docker
-	lspconfig.dockerls.setup({ on_attach = on_attach })
-	lspconfig.docker_compose_language_service.setup({ on_attach = on_attach })
+	vim.lsp.config("dockerls", {})
+	vim.lsp.enable("dockerls")
+	vim.lsp.config("docker_compose_language_service", {})
+	vim.lsp.enable("docker_compose_language_service")
 
 	-- Markdown
-	lspconfig.marksman.setup({ on_attach = on_attach })
+	vim.lsp.config("marksman", {})
+	vim.lsp.enable("marksman")
 end
 
 return {
@@ -217,5 +183,5 @@ return {
 		"williamboman/mason.nvim",
 		"windwp/nvim-autopairs",
 	},
-	init = config,
+	config = config,
 }

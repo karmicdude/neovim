@@ -72,9 +72,7 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	lazy = false,
 	build = ":TSUpdate",
-	init = function()
-		require("nvim-treesitter.configs").setup(opts)
-	end,
+	opts = opts,
 	dependencies = {
 		{ "m-demare/hlargs.nvim", event = "BufReadPost", opts = { color = "#fcbe7b" } },
 	},

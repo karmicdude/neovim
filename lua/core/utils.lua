@@ -20,16 +20,16 @@ end
 --@param win_type string Type of window
 M.ext_terminal = function(cwd, win_type)
 	local kitten = "/Applications/kitty.app/Contents/MacOS/kitten"
-	local socket = "unix:/tmp/kitty"
+	-- local socket = "unix:/tmp/kitty"
 	cwd = cwd or vim.fn.getcwd()
 	if cwd == "buffer" then
 		cwd = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":h")
 	end
 	win_type = win_type or "tab"
 	local cmd = string.format(
-		"%s @ --to %s launch --type=%s --cwd='%s' --tab-title='nvim-cmd' --title='nvim-cmd'",
+		"%s @ launch --type=%s --cwd='%s' --tab-title='nvim-cmd' --title='nvim-cmd'",
 		kitten,
-		socket,
+		-- socket,
 		win_type,
 		cwd
 	)

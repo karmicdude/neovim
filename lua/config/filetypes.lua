@@ -62,6 +62,14 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	end,
 })
 
+-- Terraform
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = "*.tf",
+	callback = function()
+		vim.bo.filetype = "terraform"
+	end,
+})
+
 -- VRL
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	pattern = {
